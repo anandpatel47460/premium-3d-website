@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <title>AURA — Premium Saree Atelier</title>
 
@@ -38,10 +38,8 @@ body{
   position:fixed;
   top:0;
   left:0;
-
   width:100%;
   height:76px;
-
   z-index:100;
 
   display:flex;
@@ -74,18 +72,13 @@ body{
 
 
 /* =====================================================
-   HERO SCROLL SPACE
+   HERO
 ===================================================== */
 
 .hero{
   height:300vh;
   position:relative;
 }
-
-
-/* =====================================================
-   STICKY HERO
-===================================================== */
 
 .hero-stage{
   position:sticky;
@@ -106,11 +99,6 @@ body{
       transparent 45%
     );
 }
-
-
-/* =====================================================
-   BACKGROUND LIGHT
-===================================================== */
 
 .hero-glow{
   position:absolute;
@@ -203,7 +191,7 @@ body{
 
 
 /* =====================================================
-   SAREE MASTER OBJECT
+   SAREE
 ===================================================== */
 
 .saree-master{
@@ -222,14 +210,8 @@ body{
 
   z-index:10;
 
-  will-change:
-    transform;
+  will-change:transform;
 }
-
-
-/* =====================================================
-   SAREE BODY
-===================================================== */
 
 .saree-body{
   position:absolute;
@@ -244,10 +226,7 @@ body{
     translate(-50%,-50%);
 
   border-radius:
-    48%
-    48%
-    18%
-    18%;
+    48% 48% 18% 18%;
 
   overflow:hidden;
 
@@ -264,24 +243,14 @@ body{
 
   box-shadow:
     0 45px 100px rgba(0,0,0,.65),
-
-    inset
-    20px 0 30px rgba(255,255,255,.035),
-
-    inset
-    -20px 0 30px rgba(0,0,0,.35);
+    inset 20px 0 30px rgba(255,255,255,.035),
+    inset -20px 0 30px rgba(0,0,0,.35);
 }
-
-
-/* =====================================================
-   FABRIC THREADS
-===================================================== */
 
 .saree-body:before{
   content:"";
 
   position:absolute;
-
   inset:0;
 
   background:
@@ -292,14 +261,7 @@ body{
       rgba(255,255,255,.045) 12px,
       transparent 14px
     );
-
-  opacity:.9;
 }
-
-
-/* =====================================================
-   SAREE GOLD BORDER
-===================================================== */
 
 .saree-body:after{
   content:"";
@@ -308,7 +270,6 @@ body{
 
   left:0;
   right:0;
-
   bottom:0;
 
   height:72px;
@@ -316,7 +277,6 @@ body{
   background:
     repeating-linear-gradient(
       90deg,
-
       #725626 0px,
       #d6bb6f 4px,
       #8d6d32 8px,
@@ -342,8 +302,7 @@ body{
   right:-300px;
   top:200px;
 
-  transform-origin:
-    left center;
+  transform-origin:left center;
 
   border-radius:10px;
 
@@ -360,36 +319,24 @@ body{
   box-shadow:
     0 35px 70px rgba(0,0,0,.5);
 
-  will-change:
-    transform;
+  will-change:transform;
 }
-
-
-/* pallu weaving */
 
 .pallu:before{
   content:"";
 
   position:absolute;
-
   inset:-20px;
 
   background:
     repeating-linear-gradient(
       135deg,
-
       transparent 0,
       transparent 12px,
-
-      rgba(224,196,115,.38)
-      13px,
-
+      rgba(224,196,115,.38) 13px,
       transparent 15px
     );
 }
-
-
-/* pallu border */
 
 .pallu:after{
   content:"";
@@ -405,7 +352,6 @@ body{
   background:
     repeating-linear-gradient(
       0deg,
-
       #765826 0px,
       #e2c878 5px,
       #87652e 10px
@@ -414,7 +360,7 @@ body{
 
 
 /* =====================================================
-   GOLD ORNAMENT
+   ORNAMENT
 ===================================================== */
 
 .saree-ornament{
@@ -423,14 +369,12 @@ body{
   top:20px;
   left:50%;
 
-  transform:
-    translateX(-50%);
+  transform:translateX(-50%);
 
   width:140px;
   height:42px;
 
-  border:
-    2px solid #c6a962;
+  border:2px solid #c6a962;
 
   border-radius:50%;
 
@@ -452,13 +396,12 @@ body{
     translate(-50%,-50%)
     rotate(45deg);
 
-  border:
-    1px solid #c6a962;
+  border:1px solid #c6a962;
 }
 
 
 /* =====================================================
-   PRODUCT INFORMATION
+   HERO PRODUCT INFO
 ===================================================== */
 
 .hero-product{
@@ -480,9 +423,7 @@ body{
 
 .hero-product-label{
   font-size:8px;
-
   letter-spacing:4px;
-
   color:#777;
 }
 
@@ -508,7 +449,7 @@ body{
 
 
 /* =====================================================
-   SCROLL INDICATOR
+   SCROLL HINT
 ===================================================== */
 
 .scroll-hint{
@@ -517,8 +458,7 @@ body{
   left:50%;
   bottom:25px;
 
-  transform:
-    translateX(-50%);
+  transform:translateX(-50%);
 
   z-index:90;
 
@@ -527,9 +467,6 @@ body{
   font-size:8px;
 
   letter-spacing:4px;
-
-  transition:
-    opacity .3s;
 }
 
 
@@ -568,9 +505,6 @@ body{
   align-items:center;
 }
 
-
-/* showcase image */
-
 .showcase-saree-area{
   height:650px;
 
@@ -588,10 +522,7 @@ body{
   height:560px;
 
   border-radius:
-    48%
-    48%
-    15%
-    15%;
+    48% 48% 15% 15%;
 
   background:
     linear-gradient(
@@ -605,6 +536,8 @@ body{
 
   box-shadow:
     0 60px 120px rgba(0,0,0,.65);
+
+  position:relative;
 }
 
 .showcase-saree:after{
@@ -612,10 +545,11 @@ body{
 
   position:absolute;
 
-  width:270px;
-  height:80px;
+  left:0;
+  right:0;
+  bottom:0;
 
-  margin-top:480px;
+  height:80px;
 
   background:
     repeating-linear-gradient(
@@ -625,9 +559,6 @@ body{
       #87642d 10px
     );
 }
-
-
-/* showcase copy */
 
 .showcase-copy{
   max-width:500px;
@@ -656,7 +587,6 @@ body{
 
 .showcase-copy h2 span{
   color:#c2a96d;
-
   font-style:italic;
 }
 
@@ -745,7 +675,7 @@ body{
 
 
 /* =====================================================
-   FOUR CARDS
+   PRODUCT ROW — DESKTOP
 ===================================================== */
 
 .products{
@@ -754,10 +684,17 @@ body{
   display:grid;
 
   grid-template-columns:
-    repeat(4,1fr);
+    repeat(4,minmax(0,1fr));
 
   gap:20px;
+
+  width:100%;
 }
+
+
+/* =====================================================
+   PRODUCT CARD
+===================================================== */
 
 .card{
   height:520px;
@@ -776,8 +713,9 @@ body{
     border-color .4s,
     box-shadow .4s;
 
-  will-change:
-    transform;
+  will-change:transform;
+
+  min-width:0;
 }
 
 .card:hover{
@@ -789,7 +727,9 @@ body{
 }
 
 
-/* card fabric */
+/* =====================================================
+   CARD FABRIC
+===================================================== */
 
 .card-fabric{
   position:absolute;
@@ -804,20 +744,18 @@ body{
     translate(-50%,-50%);
 
   border-radius:
-    45%
-    45%
-    15%
-    15%;
+    45% 45% 15% 15%;
 
   box-shadow:
     0 35px 70px rgba(0,0,0,.55);
 }
 
 
-/* four different colors */
+/* =====================================================
+   CARD COLORS
+===================================================== */
 
-.card:nth-child(1)
-.card-fabric{
+.card:nth-child(1) .card-fabric{
   background:
     linear-gradient(
       90deg,
@@ -827,8 +765,7 @@ body{
     );
 }
 
-.card:nth-child(2)
-.card-fabric{
+.card:nth-child(2) .card-fabric{
   background:
     linear-gradient(
       90deg,
@@ -838,8 +775,7 @@ body{
     );
 }
 
-.card:nth-child(3)
-.card-fabric{
+.card:nth-child(3) .card-fabric{
   background:
     linear-gradient(
       90deg,
@@ -849,8 +785,7 @@ body{
     );
 }
 
-.card:nth-child(4)
-.card-fabric{
+.card:nth-child(4) .card-fabric{
   background:
     linear-gradient(
       90deg,
@@ -859,9 +794,6 @@ body{
       #654518
     );
 }
-
-
-/* card border */
 
 .card-fabric:after{
   content:"";
@@ -884,7 +816,9 @@ body{
 }
 
 
-/* card details */
+/* =====================================================
+   CARD INFO
+===================================================== */
 
 .card-info{
   position:absolute;
@@ -1048,14 +982,16 @@ footer{
 
 
 /* =====================================================
-   MOBILE
+   TABLET
 ===================================================== */
 
 @media(max-width:900px){
 
   .products{
     grid-template-columns:
-      repeat(2,1fr);
+      repeat(4,220px);
+
+    width:max-content;
   }
 
   .showcase-inner{
@@ -1071,6 +1007,10 @@ footer{
 }
 
 
+/* =====================================================
+   MOBILE
+===================================================== */
+
 @media(max-width:600px){
 
   .nav{
@@ -1083,6 +1023,9 @@ footer{
   .nav-right{
     font-size:7px;
   }
+
+
+  /* HERO */
 
   .hero{
     height:300vh;
@@ -1137,6 +1080,9 @@ footer{
     width:180px;
   }
 
+
+  /* SHOWCASE */
+
   .showcase{
     padding:
       100px 22px;
@@ -1151,25 +1097,88 @@ footer{
     height:430px;
   }
 
-  .products{
-    grid-template-columns:1fr;
 
-    gap:25px;
-  }
-
-  .card{
-    height:500px;
-  }
+  /* =================================================
+     IMPORTANT:
+     FOUR CARDS — HORIZONTAL MOBILE ROW
+  ================================================= */
 
   .collection{
     padding:
-      110px 22px;
+      110px 0 150px;
   }
+
+  .collection-header{
+    padding:
+      0 22px;
+  }
+
+  .products{
+
+    display:flex;
+
+    flex-direction:row;
+
+    flex-wrap:nowrap;
+
+    gap:14px;
+
+    width:100%;
+
+    overflow-x:auto;
+
+    overflow-y:hidden;
+
+    padding:
+      55px 22px 25px;
+
+    margin-top:55px;
+
+    scroll-snap-type:x mandatory;
+
+    -webkit-overflow-scrolling:touch;
+
+    scrollbar-width:none;
+  }
+
+  .products::-webkit-scrollbar{
+    display:none;
+  }
+
+
+  /* EACH CARD STAYS BESIDE THE NEXT CARD */
+
+  .card{
+
+    flex:0 0 245px;
+
+    width:245px;
+
+    min-width:245px;
+
+    height:500px;
+
+    scroll-snap-align:start;
+  }
+
+
+  /* STORY */
+
+  .story{
+    padding:
+      130px 25px;
+  }
+
+
+  /* FOOTER */
 
   footer{
     flex-direction:column;
 
     gap:15px;
+
+    padding:
+      40px 22px;
   }
 
 }
@@ -1210,8 +1219,6 @@ footer{
     <div class="hero-glow"></div>
 
 
-    <!-- HERO TEXT -->
-
     <div class="hero-text">
 
       <div class="hero-label">
@@ -1232,10 +1239,7 @@ footer{
     </div>
 
 
-
-    <!-- =================================================
-         HERO SAREE
-    ================================================= -->
+    <!-- SAREE -->
 
     <div
       class="saree-master"
@@ -1253,9 +1257,6 @@ footer{
 
     </div>
 
-
-
-    <!-- PRODUCT INFORMATION -->
 
     <div
       class="hero-product"
@@ -1283,8 +1284,6 @@ footer{
 
 
 
-<!-- SCROLL INDICATOR -->
-
 <div
   class="scroll-hint"
   id="scrollHint"
@@ -1295,15 +1294,12 @@ footer{
 
 
 <!-- =====================================================
-     MAIN PRODUCT SHOWCASE
+     MAIN SHOWCASE
 ===================================================== -->
 
 <section class="showcase">
 
   <div class="showcase-inner">
-
-
-    <!-- SAREE -->
 
     <div class="showcase-saree-area">
 
@@ -1314,8 +1310,6 @@ footer{
 
     </div>
 
-
-    <!-- CONTENT -->
 
     <div class="showcase-copy">
 
@@ -1340,39 +1334,18 @@ footer{
       <div class="showcase-meta">
 
         <div class="meta-item">
-
-          <small>
-            FABRIC
-          </small>
-
-          <strong>
-            Premium Silk
-          </strong>
-
+          <small>FABRIC</small>
+          <strong>Premium Silk</strong>
         </div>
 
         <div class="meta-item">
-
-          <small>
-            WEAVE
-          </small>
-
-          <strong>
-            Jacquard
-          </strong>
-
+          <small>WEAVE</small>
+          <strong>Jacquard</strong>
         </div>
 
         <div class="meta-item">
-
-          <small>
-            PRICE
-          </small>
-
-          <strong>
-            ₹5,990
-          </strong>
-
+          <small>PRICE</small>
+          <strong>₹5,990</strong>
         </div>
 
       </div>
@@ -1405,21 +1378,14 @@ footer{
   </div>
 
 
-
-  <!-- =================================================
-       FOUR PRODUCT CARDS
-  ================================================= -->
+  <!-- FOUR CARDS -->
 
   <div class="products">
 
 
-    <!-- CARD 1 -->
-
     <div class="card">
 
-      <div
-        class="card-fabric"
-      ></div>
+      <div class="card-fabric"></div>
 
       <div class="card-info">
 
@@ -1449,13 +1415,9 @@ footer{
 
 
 
-    <!-- CARD 2 -->
-
     <div class="card">
 
-      <div
-        class="card-fabric"
-      ></div>
+      <div class="card-fabric"></div>
 
       <div class="card-info">
 
@@ -1485,13 +1447,9 @@ footer{
 
 
 
-    <!-- CARD 3 -->
-
     <div class="card">
 
-      <div
-        class="card-fabric"
-      ></div>
+      <div class="card-fabric"></div>
 
       <div class="card-info">
 
@@ -1521,13 +1479,9 @@ footer{
 
 
 
-    <!-- CARD 4 -->
-
     <div class="card">
 
-      <div
-        class="card-fabric"
-      ></div>
+      <div class="card-fabric"></div>
 
       <div class="card-info">
 
@@ -1614,7 +1568,7 @@ footer{
 <script>
 
 /* =====================================================
-   SMOOTH SCROLL ENGINE
+   SMOOTH SCROLL
 ===================================================== */
 
 const sareeMaster =
@@ -1651,7 +1605,7 @@ let currentScroll =
 
 
 /* =====================================================
-   GET SCROLL POSITION
+   SCROLL LISTENER
 ===================================================== */
 
 window.addEventListener(
@@ -1690,7 +1644,7 @@ function clamp(
 
 
 /* =====================================================
-   MAIN ANIMATION
+   MAIN ANIMATION LOOP
 ===================================================== */
 
 function animationLoop(){
@@ -1701,10 +1655,7 @@ function animationLoop(){
 
 
   /*
-  SMOOTH INTERPOLATION
-
-  This is what makes the animation
-  continuous instead of jumping.
+    Smooth interpolation
   */
 
   currentScroll +=
@@ -1715,9 +1666,7 @@ function animationLoop(){
 
 
   /*
-  =========================================
-  HERO PROGRESS
-  =========================================
+    Hero progress
   */
 
   const heroHeight =
@@ -1739,21 +1688,9 @@ function animationLoop(){
 
 
   /*
-  =========================================
-  SAREE POSITION
-  =========================================
-  */
-
-
-  /*
-  Start:
-  center
-
-  Middle:
-  moves toward left
-
-  End:
-  moves toward showcase direction
+    ==========================================
+    SAREE MOVEMENT
+    ==========================================
   */
 
   const x =
@@ -1768,12 +1705,6 @@ function animationLoop(){
     progress * 170;
 
 
-  /*
-  =========================================
-  SAREE ROTATION
-  =========================================
-  */
-
   const rotateY =
     progress *
     Math.PI *
@@ -1787,23 +1718,10 @@ function animationLoop(){
     ) * .12;
 
 
-  /*
-  =========================================
-  SAREE SCALE
-  =========================================
-  */
-
   const scale =
     1 -
-    progress *
-    .38;
+    progress * .38;
 
-
-  /*
-  =========================================
-  APPLY SAREE
-  =========================================
-  */
 
   sareeMaster.style.transform =
 
@@ -1831,25 +1749,14 @@ function animationLoop(){
 
 
   /*
-  =========================================
-  PALLU
-  =========================================
-  */
-
-
-  /*
-  Pallu travels continuously
-  from right to left.
+    ==========================================
+    PALLU RIGHT → LEFT
+    ==========================================
   */
 
   const palluX =
-    progress *
-    -560;
+    progress * -560;
 
-
-  /*
-  Natural wave.
-  */
 
   const palluY =
     Math.sin(
@@ -1867,11 +1774,6 @@ function animationLoop(){
     ) * .34;
 
 
-  const palluScale =
-    1 -
-    progress * .08;
-
-
   pallu.style.transform =
 
     "translateX(" +
@@ -1884,17 +1786,13 @@ function animationLoop(){
 
     " rotateZ(" +
     palluRotate +
-    "rad)" +
-
-    " scale(" +
-    palluScale +
-    ")";
+    "rad)";
 
 
   /*
-  =========================================
-  HERO TEXT
-  =========================================
+    ==========================================
+    HERO TEXT
+    ==========================================
   */
 
   const heroText =
@@ -1916,14 +1814,13 @@ function animationLoop(){
 
   heroText.style.opacity =
     1 -
-    progress *
-    1.15;
+    progress * 1.15;
 
 
   /*
-  =========================================
-  PRODUCT INFO
-  =========================================
+    ==========================================
+    PRODUCT INFO
+    ==========================================
   */
 
   heroProduct.style.transform =
@@ -1939,14 +1836,13 @@ function animationLoop(){
 
   heroProduct.style.opacity =
     1 -
-    progress *
-    1.2;
+    progress * 1.2;
 
 
   /*
-  =========================================
-  SCROLL HINT
-  =========================================
+    ==========================================
+    SCROLL HINT
+    ==========================================
   */
 
   scrollHint.style.opacity =
@@ -1960,7 +1856,7 @@ animationLoop();
 
 
 /* =====================================================
-   FOUR CARD FLOATING ANIMATION
+   CARD FLOATING
 ===================================================== */
 
 const cards =
@@ -1991,18 +1887,15 @@ function animateCards(){
           )
           +
           index
-        ) *
-        9;
+        ) * 9;
 
 
       const rotation =
         Math.sin(
           time *
-          .35
-          +
+          .35 +
           index
-        ) *
-        .4;
+        ) * .4;
 
 
       card.style.transform =
@@ -2030,7 +1923,7 @@ animateCards();
 
 
 /* =====================================================
-   VIEW BUTTON
+   BUTTONS
 ===================================================== */
 
 document
