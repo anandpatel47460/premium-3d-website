@@ -4,19 +4,17 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>AURA — Luxury Saree Atelier</title>
+<title>AURA — Dola Silk</title>
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
 
 <style>
-
 *{
-  box-sizing:border-box;
   margin:0;
   padding:0;
+  box-sizing:border-box;
 }
 
 html{
@@ -24,328 +22,458 @@ html{
 }
 
 body{
-  background:
-    radial-gradient(circle at 50% 15%, rgba(255,255,255,.95), transparent 34%),
-    radial-gradient(circle at 10% 70%, rgba(221,194,151,.18), transparent 30%),
-    radial-gradient(circle at 90% 80%, rgba(185,151,103,.12), transparent 30%),
-    #eee8dc;
-  color:#27231e;
+  background:#171310;
+  color:#f3eadb;
   font-family:Inter,Arial,sans-serif;
   overflow-x:hidden;
 }
 
-/* subtle textile texture */
+/* =========================
+   PREMIUM BACKGROUND
+========================= */
 
-body:before{
+body::before{
   content:"";
   position:fixed;
   inset:0;
   pointer-events:none;
-  opacity:.12;
-  background:
-    repeating-linear-gradient(
-      90deg,
-      transparent 0px,
-      transparent 5px,
-      rgba(80,60,35,.08) 6px
-    );
   z-index:0;
+
+  background:
+    radial-gradient(
+      circle at 35% 25%,
+      rgba(203,166,103,.16),
+      transparent 28%
+    ),
+    radial-gradient(
+      circle at 80% 60%,
+      rgba(181,136,72,.10),
+      transparent 32%
+    ),
+    repeating-linear-gradient(
+      105deg,
+      rgba(255,255,255,.018) 0px,
+      rgba(255,255,255,.018) 1px,
+      transparent 1px,
+      transparent 7px
+    );
 }
 
-/* ================= NAV ================= */
+/* =========================
+   NAVIGATION
+========================= */
 
 .nav{
   position:fixed;
   top:0;
   left:0;
   width:100%;
-  height:78px;
+  height:82px;
+
+  padding:0 5vw;
+
   display:flex;
   align-items:center;
   justify-content:space-between;
-  padding:0 5vw;
+
   z-index:100;
-  background:linear-gradient(
-    to bottom,
-    rgba(238,232,220,.88),
-    rgba(238,232,220,0)
-  );
-  backdrop-filter:blur(7px);
+
+  background:
+    linear-gradient(
+      to bottom,
+      rgba(18,14,11,.92),
+      rgba(18,14,11,.35),
+      transparent
+    );
+
+  backdrop-filter:blur(10px);
 }
 
 .logo{
   font-family:"Cormorant Garamond",serif;
-  font-size:27px;
-  letter-spacing:.28em;
+  font-size:28px;
+  letter-spacing:.30em;
   font-weight:600;
 }
 
-.navlinks{
+.navLinks{
   display:flex;
-  gap:32px;
-  font-size:11px;
-  letter-spacing:.16em;
+  gap:35px;
+
+  font-size:9px;
+  letter-spacing:.22em;
   text-transform:uppercase;
+
+  color:rgba(243,234,219,.68);
 }
 
-.navlinks span{
+.navLinks span{
   cursor:pointer;
   transition:.3s;
 }
 
-.navlinks span:hover{
-  opacity:.5;
+.navLinks span:hover{
+  color:#fff;
 }
 
 .bag{
-  font-size:11px;
-  letter-spacing:.15em;
+  font-size:9px;
+  letter-spacing:.20em;
   text-transform:uppercase;
 }
 
-/* ================= HERO STORY ================= */
+/* =========================
+   MAIN STORY
+========================= */
 
 .story{
   position:relative;
-  height:430vh;
+  height:470vh;
 }
 
-.sticky{
+.stage{
   position:sticky;
   top:0;
+
+  width:100%;
   height:100vh;
   min-height:650px;
+
   overflow:hidden;
+
+  background:
+    radial-gradient(
+      ellipse at 50% 42%,
+      rgba(104,73,40,.20),
+      transparent 42%
+    );
 }
 
-/* ================= AMBIENT LIGHT ================= */
+/* ambient lights */
 
-.light{
+.glow{
   position:absolute;
-  width:650px;
-  height:650px;
-  border-radius:50%;
-  background:radial-gradient(
-    circle,
-    rgba(255,255,255,.85),
-    rgba(255,255,255,0) 70%
-  );
+  width:720px;
+  height:720px;
+
   left:50%;
   top:42%;
+
   transform:translate(-50%,-50%);
-  pointer-events:none;
+
+  border-radius:50%;
+
+  background:
+    radial-gradient(
+      circle,
+      rgba(227,191,124,.16),
+      rgba(227,191,124,.04) 35%,
+      transparent 70%
+    );
+
+  filter:blur(3px);
 }
 
-/* ================= HERO LABEL ================= */
+/* =========================
+   HERO
+========================= */
 
-.eyebrow{
+.heroLabel{
   position:absolute;
+
   left:5vw;
   top:18vh;
-  font-size:10px;
-  letter-spacing:.3em;
+
+  font-size:9px;
+  letter-spacing:.34em;
   text-transform:uppercase;
-  opacity:.55;
+
+  color:rgba(243,234,219,.48);
 }
 
 .heroTitle{
   position:absolute;
+
   left:5vw;
-  top:23vh;
+  top:22vh;
+
+  z-index:3;
+
   font-family:"Cormorant Garamond",serif;
-  font-size:clamp(58px,8vw,130px);
-  line-height:.8;
+
+  font-size:clamp(70px,9vw,145px);
+
+  line-height:.76;
+
   font-weight:500;
-  letter-spacing:-.04em;
-  z-index:4;
+
+  letter-spacing:-.045em;
 }
 
 .heroTitle small{
   display:block;
-  font-family:Inter,sans-serif;
-  font-size:10px;
-  letter-spacing:.35em;
-  text-transform:uppercase;
-  margin-top:24px;
+
+  margin-top:28px;
   margin-left:7px;
-  opacity:.5;
+
+  font-family:Inter,sans-serif;
+
+  font-size:9px;
+  letter-spacing:.32em;
+  text-transform:uppercase;
+
+  color:rgba(243,234,219,.45);
 }
 
-/* ================= MODEL STAGE ================= */
+/* =========================
+   MODEL AREA
+========================= */
 
-.modelStage{
+.modelArea{
   position:absolute;
-  left:8vw;
-  top:12vh;
-  width:46vw;
-  height:72vh;
-  min-height:530px;
+
+  left:50%;
+  top:9vh;
+
+  width:45vw;
+  height:76vh;
+
+  transform:translateX(-50%);
+
   display:flex;
   align-items:center;
   justify-content:center;
-  z-index:8;
-  transform-style:preserve-3d;
-  transition:none;
+
+  z-index:10;
+
+  pointer-events:none;
 }
 
-/* rotating model */
-
-.mainModel{
+.model{
   position:absolute;
-  width:min(430px,34vw);
-  max-height:70vh;
+
+  width:min(470px,38vw);
+  max-height:72vh;
+
   object-fit:contain;
-  z-index:5;
+
   transform-origin:center bottom;
+
   filter:
-    drop-shadow(0 24px 25px rgba(55,42,27,.17))
-    drop-shadow(0 3px 5px rgba(0,0,0,.10));
+    drop-shadow(0 35px 32px rgba(0,0,0,.48))
+    drop-shadow(0 8px 9px rgba(0,0,0,.25));
+
   will-change:transform;
+
+  z-index:10;
 }
 
-/* ================= PREMIUM DISPLAY DISH ================= */
+/* =========================
+   DISH
+   HIDDEN INITIALLY
+========================= */
 
-.pedestal{
+.dish{
   position:absolute;
+
   width:390px;
-  height:88px;
-  bottom:4vh;
+  height:85px;
+
   left:50%;
-  transform:translateX(-50%) perspective(500px) rotateX(58deg);
+  bottom:3vh;
+
+  transform:
+    translateX(-50%)
+    perspective(600px)
+    rotateX(60deg)
+    scale(.75);
+
   border-radius:50%;
-  z-index:3;
+
+  opacity:0;
+
+  z-index:5;
+
   background:
     radial-gradient(
-      ellipse at 50% 42%,
-      rgba(255,255,255,.9) 0%,
-      rgba(239,229,210,.9) 36%,
-      rgba(184,148,97,.52) 58%,
-      rgba(90,67,40,.32) 69%,
-      rgba(255,255,255,.05) 71%
+      ellipse at center,
+      rgba(255,245,221,.95) 0%,
+      rgba(186,145,85,.75) 48%,
+      rgba(77,53,29,.50) 67%,
+      transparent 72%
     );
+
   box-shadow:
-    0 18px 30px rgba(53,40,25,.18),
-    inset 0 2px 5px rgba(255,255,255,.9),
-    inset 0 -6px 12px rgba(94,67,38,.20);
+    0 28px 35px rgba(0,0,0,.42),
+    inset 0 2px 7px rgba(255,255,255,.45);
 }
 
-.pedestal:before{
+.dish::before{
   content:"";
+
   position:absolute;
-  inset:10px;
+
+  inset:11px;
+
   border-radius:50%;
-  border:1px solid rgba(161,125,75,.65);
+
+  border:1px solid rgba(238,202,137,.65);
+
   box-shadow:
-    inset 0 0 16px rgba(255,255,255,.8);
+    inset 0 0 18px rgba(255,255,255,.20);
 }
 
-.pedestal:after{
+.dish::after{
   content:"";
+
   position:absolute;
-  width:65%;
-  height:15px;
-  left:17.5%;
-  bottom:-10px;
+
+  width:70%;
+  height:16px;
+
+  left:15%;
+  bottom:-12px;
+
   border-radius:50%;
-  background:rgba(60,43,25,.16);
-  filter:blur(7px);
+
+  background:rgba(0,0,0,.5);
+
+  filter:blur(8px);
 }
 
-/* ================= PALLU SWEEP ================= */
+/* =========================
+   PALLU LIGHT SWEEP
+========================= */
 
-.palluSweep{
+.pallu{
   position:absolute;
-  width:440px;
-  height:190px;
-  right:-15%;
-  top:48%;
-  z-index:2;
-  pointer-events:none;
+
+  width:620px;
+  height:220px;
+
+  right:-70%;
+
+  top:44%;
+
   opacity:0;
+
   border-radius:50%;
+
   background:
     linear-gradient(
       90deg,
       transparent,
-      rgba(194,155,91,.20),
-      rgba(255,255,255,.55),
-      rgba(194,155,91,.15),
+      rgba(211,169,97,.08),
+      rgba(255,238,192,.38),
+      rgba(198,151,75,.18),
       transparent
     );
-  filter:blur(4px);
-  transform:rotate(-12deg) translateX(80px);
+
+  filter:blur(5px);
+
+  transform:
+    rotate(-13deg)
+    translateX(120px);
+
+  z-index:7;
 }
 
-/* ================= DETAILS ================= */
+/* =========================
+   DETAILS
+========================= */
 
 .details{
   position:absolute;
+
   right:7vw;
-  top:23vh;
+  top:20vh;
+
   width:34vw;
   max-width:480px;
-  z-index:15;
+
+  z-index:25;
+
   opacity:0;
-  transform:translateX(70px);
+
+  transform:translateX(80px);
 }
 
-.detailsTop{
-  font-size:10px;
-  text-transform:uppercase;
+.detailKicker{
+  font-size:9px;
   letter-spacing:.28em;
-  opacity:.5;
-  margin-bottom:13px;
+  text-transform:uppercase;
+
+  color:rgba(243,234,219,.45);
+
+  margin-bottom:12px;
 }
 
-.productName{
+.detailName{
   font-family:"Cormorant Garamond",serif;
-  font-size:clamp(42px,5vw,78px);
-  line-height:.88;
+
+  font-size:clamp(48px,5.5vw,82px);
+
+  line-height:.82;
+
   font-weight:500;
-  margin-bottom:18px;
+
+  margin-bottom:22px;
 }
 
-.productIntro{
+.detailDescription{
   max-width:390px;
-  font-size:12px;
-  line-height:1.8;
-  opacity:.62;
-  margin-bottom:26px;
+
+  font-size:11px;
+  line-height:1.9;
+
+  color:rgba(243,234,219,.55);
+
+  margin-bottom:28px;
 }
 
-.specs{
+/* no card around details */
+
+.specGrid{
   display:grid;
   grid-template-columns:1fr 1fr;
-  border-top:1px solid rgba(74,58,38,.22);
+
+  border-top:1px solid rgba(238,202,137,.22);
 }
 
 .spec{
   padding:13px 0;
-  border-bottom:1px solid rgba(74,58,38,.16);
+
+  border-bottom:1px solid rgba(238,202,137,.13);
 }
 
 .spec:nth-child(odd){
-  margin-right:18px;
+  margin-right:20px;
 }
 
 .specLabel{
-  font-size:8px;
+  font-size:7px;
   letter-spacing:.22em;
   text-transform:uppercase;
-  opacity:.45;
+
+  color:rgba(243,234,219,.36);
+
   margin-bottom:5px;
 }
 
 .specValue{
   font-family:"Cormorant Garamond",serif;
+
   font-size:20px;
+
+  color:#f4e9d7;
 }
 
-.priceRow{
+.priceLine{
   display:flex;
   align-items:center;
   justify-content:space-between;
-  margin-top:25px;
+
+  margin-top:24px;
 }
 
 .price{
@@ -353,209 +481,299 @@ body:before{
   font-size:32px;
 }
 
-.availability{
-  font-size:9px;
-  letter-spacing:.14em;
+.available{
+  font-size:8px;
+  letter-spacing:.16em;
   text-transform:uppercase;
-  opacity:.55;
+
+  color:rgba(243,234,219,.45);
 }
 
 .actions{
   display:flex;
   gap:10px;
+
   margin-top:22px;
 }
 
 .btn{
-  border:1px solid rgba(56,44,30,.55);
+  padding:13px 20px;
+
+  border:1px solid rgba(235,201,139,.45);
+
   background:transparent;
-  padding:13px 21px;
-  font-size:9px;
+
+  color:#f4e9d7;
+
+  font-size:8px;
   letter-spacing:.18em;
   text-transform:uppercase;
+
+  transition:.35s;
+
   cursor:pointer;
-  transition:.3s;
 }
 
 .btn.primary{
-  background:#2c2822;
-  color:#fff;
+  background:#e6c58d;
+  color:#1a140e;
+  border-color:#e6c58d;
 }
 
 .btn:hover{
-  transform:translateY(-2px);
+  transform:translateY(-3px);
 }
 
-/* ================= SCROLL INDICATOR ================= */
+/* =========================
+   SCROLL HINT
+========================= */
 
 .scrollHint{
   position:absolute;
-  bottom:6vh;
+
   left:5vw;
-  font-size:9px;
-  letter-spacing:.2em;
+  bottom:6vh;
+
+  font-size:8px;
+  letter-spacing:.25em;
   text-transform:uppercase;
-  opacity:.45;
-}
 
-.scrollLine{
-  width:60px;
-  height:1px;
-  background:#544936;
-  opacity:.35;
-  margin-top:10px;
-}
+  color:rgba(243,234,219,.35);
 
-/* ================= COLLECTION ================= */
-
-.collection{
-  position:absolute;
-  left:0;
-  right:0;
-  top:270vh;
-  width:100%;
-  padding:0 5vw;
-  opacity:0;
-  transform:translateY(40px);
   z-index:30;
 }
 
-.collectionHeader{
+.scrollLine{
+  width:65px;
+  height:1px;
+
+  margin-top:10px;
+
+  background:#cda96d;
+
+  opacity:.4;
+}
+
+/* =========================
+   COLLECTION
+========================= */
+
+.collection{
+  position:absolute;
+
+  left:0;
+  right:0;
+
+  top:330vh;
+
+  padding:0 5vw;
+
+  z-index:40;
+
+  opacity:0;
+  transform:translateY(60px);
+}
+
+.collectionTop{
   display:flex;
-  align-items:end;
   justify-content:space-between;
-  margin-bottom:28px;
+  align-items:end;
+
+  margin-bottom:20px;
 }
 
 .collectionKicker{
-  font-size:9px;
+  font-size:8px;
   letter-spacing:.28em;
   text-transform:uppercase;
-  opacity:.48;
+
+  color:rgba(243,234,219,.38);
 }
 
 .collectionTitle{
   font-family:"Cormorant Garamond",serif;
+
   font-size:48px;
-  font-weight:500;
-  line-height:.9;
+  line-height:.85;
+
   margin-top:8px;
 }
 
 .collectionNote{
-  font-size:10px;
-  letter-spacing:.1em;
-  opacity:.48;
+  font-size:8px;
+  letter-spacing:.13em;
+
+  color:rgba(243,234,219,.35);
 }
 
-/* ================= CARDS ================= */
+/* =========================
+   PREMIUM CARDS
+========================= */
 
 .products{
   display:grid;
-  grid-template-columns:repeat(4,1fr);
-  gap:13px;
+
+  grid-template-columns:
+    repeat(4,minmax(0,1fr));
+
+  gap:10px;
+
   align-items:start;
 }
 
-.productCard{
+.card{
   position:relative;
-  height:330px;
-  padding:10px;
-  border:1px solid rgba(75,57,34,.18);
+
+  height:305px;
+
+  padding:8px;
+
+  overflow:hidden;
+
+  border:1px solid rgba(221,180,109,.22);
+
   background:
     linear-gradient(
       145deg,
-      rgba(255,255,255,.66),
-      rgba(255,250,240,.28)
+      rgba(53,40,29,.95),
+      rgba(29,22,17,.92)
     );
-  backdrop-filter:blur(14px);
+
   box-shadow:
-    0 14px 30px rgba(65,48,27,.08),
-    inset 0 1px 0 rgba(255,255,255,.7);
+    0 25px 50px rgba(0,0,0,.30),
+    inset 0 1px 0 rgba(255,255,255,.07);
+
   transition:
-    transform .5s cubic-bezier(.2,.8,.2,1),
-    box-shadow .5s;
-  overflow:hidden;
+    transform .5s ease,
+    border-color .5s ease,
+    box-shadow .5s ease;
 }
 
-.productCard:hover{
+.card:hover{
   transform:translateY(-9px);
+
+  border-color:rgba(226,190,123,.55);
+
   box-shadow:
-    0 22px 45px rgba(65,48,27,.15),
-    inset 0 1px 0 rgba(255,255,255,.8);
+    0 35px 60px rgba(0,0,0,.42),
+    inset 0 1px 0 rgba(255,255,255,.10);
 }
 
-/* center card */
+.card.featured{
+  transform:translateY(-12px);
 
-.productCard.centerCard{
-  transform:translateY(-8px);
+  border-color:rgba(224,187,119,.50);
+
+  box-shadow:
+    0 30px 65px rgba(0,0,0,.42),
+    inset 0 1px 0 rgba(255,255,255,.10);
 }
 
-.productCard.centerCard:hover{
-  transform:translateY(-17px);
+.card.featured:hover{
+  transform:translateY(-20px);
+}
+
+/* subtle corner detail */
+
+.card::before{
+  content:"";
+
+  position:absolute;
+
+  width:70px;
+  height:70px;
+
+  top:-35px;
+  right:-35px;
+
+  border-radius:50%;
+
+  background:
+    radial-gradient(
+      circle,
+      rgba(226,187,117,.18),
+      transparent 70%
+    );
 }
 
 .cardImage{
-  height:205px;
   position:relative;
-  overflow:hidden;
+
+  height:185px;
+
   display:flex;
-  justify-content:center;
   align-items:center;
+  justify-content:center;
+
+  overflow:hidden;
+
   background:
     radial-gradient(
-      circle at 50% 40%,
-      rgba(255,255,255,.9),
-      rgba(230,221,207,.45)
+      circle at center,
+      rgba(113,79,43,.32),
+      transparent 68%
     );
 }
 
 .cardImage img{
   width:100%;
   height:100%;
+
   object-fit:contain;
-  transition:transform .8s cubic-bezier(.2,.8,.2,1);
-  filter:drop-shadow(0 10px 9px rgba(50,35,20,.12));
+
+  filter:
+    drop-shadow(0 18px 15px rgba(0,0,0,.42));
+
+  transition:transform .7s ease;
 }
 
-.productCard:hover .cardImage img{
-  transform:scale(1.045);
+.card:hover .cardImage img{
+  transform:scale(1.04);
 }
 
-.cardNo{
+.cardNumber{
   position:absolute;
-  top:9px;
-  left:10px;
-  font-size:8px;
+
+  top:8px;
+  left:9px;
+
+  font-size:7px;
   letter-spacing:.18em;
-  opacity:.4;
+
+  color:rgba(243,234,219,.32);
 }
 
 .cardInfo{
-  padding:13px 7px 5px;
+  padding:10px 6px 4px;
 }
 
 .cardName{
   font-family:"Cormorant Garamond",serif;
-  font-size:22px;
-  line-height:1;
+
+  font-size:23px;
+
+  line-height:.9;
 }
 
 .cardMeta{
   display:flex;
   justify-content:space-between;
-  margin-top:8px;
-  font-size:8px;
+
+  margin-top:7px;
+
+  font-size:7px;
+  letter-spacing:.13em;
   text-transform:uppercase;
-  letter-spacing:.14em;
-  opacity:.48;
+
+  color:rgba(243,234,219,.38);
 }
 
 .cardBottom{
   display:flex;
-  align-items:center;
   justify-content:space-between;
-  margin-top:14px;
+  align-items:center;
+
+  margin-top:12px;
 }
 
 .cardPrice{
@@ -563,147 +781,169 @@ body:before{
   font-size:19px;
 }
 
-.viewBtn{
-  font-size:8px;
-  letter-spacing:.15em;
+.view{
+  font-size:7px;
+  letter-spacing:.16em;
   text-transform:uppercase;
-  border-bottom:1px solid rgba(45,35,24,.4);
+
   padding-bottom:3px;
-  cursor:pointer;
+
+  border-bottom:1px solid rgba(226,187,117,.45);
 }
 
-/* ================= CENTER MOVING SAREE ================= */
+/* =========================
+   FLYING SAREE
+========================= */
 
 .flyingSaree{
   position:absolute;
-  width:300px;
-  height:300px;
+
+  width:270px;
+  height:270px;
+
   object-fit:contain;
-  z-index:60;
+
   opacity:0;
+
+  z-index:70;
+
   pointer-events:none;
-  filter:drop-shadow(0 20px 20px rgba(50,35,20,.16));
+
+  filter:
+    drop-shadow(0 25px 22px rgba(0,0,0,.48));
 }
 
-/* ================= CENTER CARD GLOW ================= */
-
-.centerCard:after{
-  content:"";
-  position:absolute;
-  inset:0;
-  pointer-events:none;
-  border:1px solid rgba(174,136,79,.32);
-  opacity:.5;
-}
-
-/* ================= FOOTER ================= */
+/* =========================
+   FOOTER
+========================= */
 
 .footer{
   position:absolute;
-  top:405vh;
+
+  top:455vh;
+
   left:5vw;
   right:5vw;
-  padding:30px 0;
-  border-top:1px solid rgba(70,53,34,.18);
+
+  padding:25px 0;
+
+  border-top:1px solid rgba(226,187,117,.15);
+
   display:flex;
   justify-content:space-between;
-  font-size:9px;
-  letter-spacing:.16em;
+
+  font-size:8px;
+  letter-spacing:.17em;
   text-transform:uppercase;
-  opacity:.5;
+
+  color:rgba(243,234,219,.28);
 }
 
-/* ================= MOBILE ================= */
+/* =========================
+   MOBILE
+========================= */
 
 @media(max-width:800px){
 
   .nav{
     height:65px;
-    padding:0 20px;
+    padding:0 5vw;
   }
 
   .logo{
     font-size:22px;
   }
 
-  .navlinks{
+  .navLinks{
     display:none;
   }
 
   .bag{
-    font-size:9px;
+    font-size:8px;
   }
 
   .story{
-    height:520vh;
-  }
-
-  .sticky{
-    min-height:650px;
-  }
-
-  .eyebrow{
-    top:12vh;
-    left:22px;
+    height:430vh;
   }
 
   .heroTitle{
-    left:22px;
-    top:16vh;
-    font-size:62px;
+    left:6vw;
+    top:17vh;
+
+    font-size:72px;
   }
 
-  .modelStage{
-    left:0;
-    top:23vh;
-    width:100vw;
-    height:53vh;
-    min-height:400px;
+  .heroLabel{
+    left:6vw;
+    top:13vh;
   }
 
-  .mainModel{
-    width:min(310px,72vw);
-    max-height:50vh;
+  .modelArea{
+    left:50%;
+    top:21vh;
+
+    width:92vw;
+    height:54vh;
   }
 
-  .pedestal{
-    width:280px;
+  .model{
+    width:78vw;
+    max-height:55vh;
+  }
+
+  .dish{
+    width:270px;
     height:65px;
-    bottom:4vh;
+    bottom:1vh;
   }
 
   .details{
-    left:22px;
-    right:22px;
-    top:70vh;
-    width:auto;
-    max-width:none;
+    left:7vw;
+    right:auto;
+
+    top:55vh;
+
+    width:86vw;
+
+    transform:translateY(40px);
   }
 
-  .productName{
-    font-size:46px;
+  .detailName{
+    font-size:50px;
   }
 
-  .productIntro{
-    font-size:11px;
-    max-width:330px;
+  .detailDescription{
+    display:none;
+  }
+
+  .spec{
+    padding:8px 0;
   }
 
   .specValue{
     font-size:17px;
   }
 
-  .price{
-    font-size:27px;
+  .priceLine{
+    margin-top:14px;
+  }
+
+  .actions{
+    margin-top:12px;
+  }
+
+  .btn{
+    padding:10px 13px;
   }
 
   .collection{
-    top:320vh;
-    padding:0 20px;
+    top:275vh;
+
+    padding:0 5vw;
   }
 
-  .collectionHeader{
-    margin-bottom:18px;
+  .collectionTop{
+    margin-bottom:12px;
   }
 
   .collectionTitle{
@@ -715,395 +955,493 @@ body:before{
   }
 
   .products{
-    display:flex;
-    gap:9px;
-    overflow-x:auto;
-    padding-bottom:18px;
-    scroll-snap-type:x mandatory;
+    display:grid;
+
+    grid-template-columns:
+      repeat(2,minmax(0,1fr));
+
+    gap:7px;
   }
 
-  .products::-webkit-scrollbar{
-    display:none;
-  }
-
-  .productCard{
-    flex:0 0 205px;
-    width:205px;
-    height:290px;
-    scroll-snap-align:center;
+  .card{
+    height:245px;
+    padding:6px;
   }
 
   .cardImage{
-    height:177px;
+    height:135px;
+  }
+
+  .cardInfo{
+    padding:8px 4px;
   }
 
   .cardName{
-    font-size:20px;
+    font-size:18px;
   }
 
   .cardMeta{
-    font-size:7px;
+    font-size:6px;
   }
 
   .cardPrice{
-    font-size:17px;
+    font-size:16px;
   }
 
-  .flyingSaree{
-    width:230px;
-    height:230px;
-  }
-
-  .scrollHint{
-    display:none;
+  .view{
+    font-size:6px;
   }
 
   .footer{
-    top:485vh;
-    left:20px;
-    right:20px;
+    top:415vh;
   }
 }
-
 </style>
 </head>
 
 <body>
 
-<!-- NAV -->
+<!-- =========================
+     NAV
+========================= -->
 
 <nav class="nav">
 
-  <div class="logo">AURA</div>
+  <div class="logo">
+    AURA
+  </div>
 
-  <div class="navlinks">
+  <div class="navLinks">
     <span>Home</span>
     <span>Collection</span>
     <span>Atelier</span>
+    <span>About</span>
   </div>
 
   <div class="bag">
-    BAG <span id="bagCount">0</span>
+    Bag — 0
   </div>
 
 </nav>
 
 
-<!-- MAIN STORY -->
+<!-- =========================
+     MAIN
+========================= -->
 
 <section class="story">
 
-<div class="sticky">
+  <div class="stage">
 
-  <div class="light"></div>
-
-  <div class="eyebrow">
-    SIGNATURE COLLECTION · 01
-  </div>
-
-  <h1 class="heroTitle">
-    Dola<br>Silk
-    <small>Jacquard Saree</small>
-  </h1>
+    <div class="glow"></div>
 
 
-  <!-- MODEL -->
+    <!-- HERO -->
 
-  <div class="modelStage" id="modelStage">
-
-    <div class="palluSweep" id="palluSweep"></div>
-
-    <img
-      id="mainModel"
-      class="mainModel"
-      src="IMG_7846.png"
-      alt="Dola Silk Saree"
-    >
-
-    <div class="pedestal"></div>
-
-  </div>
-
-
-  <!-- PRODUCT DETAILS -->
-
-  <div class="details" id="details">
-
-    <div class="detailsTop">
-      AURA / SIGNATURE 01
+    <div class="heroLabel">
+      Signature Collection · 01
     </div>
 
-    <h2 class="productName">
-      Dola Silk<br>Jacquard
-    </h2>
+    <h1 class="heroTitle">
+      Dola<br>
+      Silk
 
-    <p class="productIntro">
-      A refined woven saree created with rich silk texture,
-      detailed jacquard work and an elegant statement border.
-      Designed for weddings, celebrations and timeless occasions.
-    </p>
+      <small>
+        Jacquard Saree
+      </small>
+    </h1>
 
-    <div class="specs">
 
-      <div class="spec">
-        <div class="specLabel">Fabric</div>
-        <div class="specValue">Dola Silk</div>
+    <!-- MODEL -->
+
+    <div class="modelArea" id="modelArea">
+
+      <div
+        class="pallu"
+        id="pallu">
       </div>
 
-      <div class="spec">
-        <div class="specLabel">Weave</div>
-        <div class="specValue">Jacquard</div>
-      </div>
+      <img
+        id="mainModel"
+        class="model"
+        src="IMG_7846.png"
+        alt="Dola Silk Saree">
 
-      <div class="spec">
-        <div class="specLabel">Border</div>
-        <div class="specValue">Woven Jari</div>
-      </div>
+      <!-- DISH IS HIDDEN UNTIL SHOWCASE -->
 
-      <div class="spec">
-        <div class="specLabel">Colour</div>
-        <div class="specValue">Royal Tone</div>
-      </div>
-
-      <div class="spec">
-        <div class="specLabel">Occasion</div>
-        <div class="specValue">Wedding</div>
-      </div>
-
-      <div class="spec">
-        <div class="specLabel">Availability</div>
-        <div class="specValue">In Stock</div>
-      </div>
-
-    </div>
-
-    <div class="priceRow">
-
-      <div class="price">
-        ₹12,500
-      </div>
-
-      <div class="availability">
-        Ready to ship
-      </div>
-
-    </div>
-
-    <div class="actions">
-
-      <button class="btn primary" onclick="addBag()">
-        Add to Bag
-      </button>
-
-      <button class="btn">
-        View Details
-      </button>
-
-    </div>
-
-  </div>
-
-
-  <!-- SCROLL -->
-
-  <div class="scrollHint">
-    Scroll to explore
-    <div class="scrollLine"></div>
-  </div>
-
-
-  <!-- COLLECTION -->
-
-  <section class="collection" id="collection">
-
-    <div class="collectionHeader">
-
-      <div>
-        <div class="collectionKicker">
-          The Edit · 2026
-        </div>
-
-        <h2 class="collectionTitle">
-          Selected Pieces
-        </h2>
-      </div>
-
-      <div class="collectionNote">
-        Woven for moments that remain.
+      <div
+        id="dish"
+        class="dish">
       </div>
 
     </div>
 
 
-    <div class="products">
+    <!-- DETAILS -->
 
-      <!-- CARD 1 -->
+    <div
+      id="details"
+      class="details">
 
-      <article class="productCard">
+      <div class="detailKicker">
+        Dola Silk · Signature 01
+      </div>
 
-        <div class="cardImage">
-          <span class="cardNo">01</span>
+      <div class="detailName">
+        Dola<br>
+        Jacquard
+      </div>
 
-          <img
-            src="IMG_7846.png"
-            alt=""
-          >
-        </div>
+      <div class="detailDescription">
+        A refined jacquard weave crafted for an elegant
+        fall, rich surface texture and a statement
+        occasion finish.
+      </div>
 
-        <div class="cardInfo">
+      <div class="specGrid">
 
-          <div class="cardName">
+        <div class="spec">
+          <div class="specLabel">
+            Fabric
+          </div>
+          <div class="specValue">
             Dola Silk
           </div>
-
-          <div class="cardMeta">
-            <span>Jacquard</span>
-            <span>Signature</span>
-          </div>
-
-          <div class="cardBottom">
-            <div class="cardPrice">₹12,500</div>
-            <div class="viewBtn">View</div>
-          </div>
-
         </div>
 
-      </article>
-
-
-      <!-- CARD 2 -->
-
-      <article class="productCard">
-
-        <div class="cardImage">
-          <span class="cardNo">02</span>
-
-          <img
-            src="IMG_7847.png"
-            alt=""
-          >
+        <div class="spec">
+          <div class="specLabel">
+            Weave
+          </div>
+          <div class="specValue">
+            Jacquard
+          </div>
         </div>
 
-        <div class="cardInfo">
-
-          <div class="cardName">
-            Royal Weave
+        <div class="spec">
+          <div class="specLabel">
+            Border
           </div>
-
-          <div class="cardMeta">
-            <span>Silk</span>
-            <span>Jari</span>
+          <div class="specValue">
+            Woven Jari
           </div>
-
-          <div class="cardBottom">
-            <div class="cardPrice">₹13,800</div>
-            <div class="viewBtn">View</div>
-          </div>
-
         </div>
 
-      </article>
-
-
-      <!-- CENTER CARD -->
-
-      <article class="productCard centerCard" id="centerCard">
-
-        <div class="cardImage">
-
-          <span class="cardNo">03</span>
-
-          <img
-            id="centerImage"
-            src="IMG_7848.png"
-            alt=""
-          >
-
+        <div class="spec">
+          <div class="specLabel">
+            Colour
+          </div>
+          <div class="specValue">
+            Champagne
+          </div>
         </div>
 
-        <div class="cardInfo">
-
-          <div class="cardName">
-            Heritage Silk
+        <div class="spec">
+          <div class="specLabel">
+            Occasion
           </div>
-
-          <div class="cardMeta">
-            <span>Premium</span>
-            <span>Wedding</span>
+          <div class="specValue">
+            Wedding
           </div>
-
-          <div class="cardBottom">
-            <div class="cardPrice">₹15,200</div>
-            <div class="viewBtn">View</div>
-          </div>
-
         </div>
 
-      </article>
-
-
-      <!-- CARD 4 -->
-
-      <article class="productCard">
-
-        <div class="cardImage">
-
-          <span class="cardNo">04</span>
-
-          <img
-            src="IMG_7849.png"
-            alt=""
-          >
-
+        <div class="spec">
+          <div class="specLabel">
+            Finish
+          </div>
+          <div class="specValue">
+            Premium
+          </div>
         </div>
 
-        <div class="cardInfo">
+      </div>
 
-          <div class="cardName">
-            Royal Drape
-          </div>
+      <div class="priceLine">
 
-          <div class="cardMeta">
-            <span>Dola</span>
-            <span>Festive</span>
-          </div>
-
-          <div class="cardBottom">
-            <div class="cardPrice">₹11,900</div>
-            <div class="viewBtn">View</div>
-          </div>
-
+        <div class="price">
+          ₹4,999
         </div>
 
-      </article>
+        <div class="available">
+          Available · Ready to ship
+        </div>
+
+      </div>
+
+      <div class="actions">
+
+        <button class="btn primary">
+          View Saree
+        </button>
+
+        <button class="btn">
+          Add to Bag
+        </button>
+
+      </div>
 
     </div>
 
-  </section>
+
+    <!-- SCROLL -->
+
+    <div class="scrollHint">
+
+      Scroll to explore
+
+      <div class="scrollLine"></div>
+
+    </div>
 
 
-  <!-- FLYING IMAGE -->
+    <!-- =========================
+         COLLECTION
+    ========================= -->
 
-  <img
-    id="flyingSaree"
-    class="flyingSaree"
-    src="IMG_7846.png"
-    alt=""
-  >
+    <section
+      id="collection"
+      class="collection">
+
+      <div class="collectionTop">
+
+        <div>
+
+          <div class="collectionKicker">
+            The Collection
+          </div>
+
+          <div class="collectionTitle">
+            Four expressions
+          </div>
+
+        </div>
+
+        <div class="collectionNote">
+          Crafted for modern occasions
+        </div>
+
+      </div>
 
 
-</div>
+      <div class="products">
+
+
+        <!-- CARD 01 -->
+
+        <article class="card">
+
+          <div class="cardImage">
+
+            <div class="cardNumber">
+              01
+            </div>
+
+            <img
+              src="IMG_7847.png"
+              alt="Saree 01">
+
+          </div>
+
+          <div class="cardInfo">
+
+            <div class="cardName">
+              Noor Silk
+            </div>
+
+            <div class="cardMeta">
+              <span>Silk</span>
+              <span>Jacquard</span>
+            </div>
+
+            <div class="cardBottom">
+
+              <div class="cardPrice">
+                ₹3,999
+              </div>
+
+              <div class="view">
+                View
+              </div>
+
+            </div>
+
+          </div>
+
+        </article>
+
+
+        <!-- CARD 02 -->
+
+        <article class="card">
+
+          <div class="cardImage">
+
+            <div class="cardNumber">
+              02
+            </div>
+
+            <img
+              src="IMG_7848.png"
+              alt="Saree 02">
+
+          </div>
+
+          <div class="cardInfo">
+
+            <div class="cardName">
+              Meher Silk
+            </div>
+
+            <div class="cardMeta">
+              <span>Dola</span>
+              <span>Woven</span>
+            </div>
+
+            <div class="cardBottom">
+
+              <div class="cardPrice">
+                ₹4,499
+              </div>
+
+              <div class="view">
+                View
+              </div>
+
+            </div>
+
+          </div>
+
+        </article>
+
+
+        <!-- CARD 03
+             THIS IS THE CENTER / FEATURED CARD
+        -->
+
+        <article
+          id="centerCard"
+          class="card featured">
+
+          <div class="cardImage">
+
+            <div class="cardNumber">
+              Signature
+            </div>
+
+            <img
+              src="IMG_7846.png"
+              alt="Dola Silk">
+
+          </div>
+
+          <div class="cardInfo">
+
+            <div class="cardName">
+              Dola Silk
+            </div>
+
+            <div class="cardMeta">
+              <span>Signature</span>
+              <span>Jacquard</span>
+            </div>
+
+            <div class="cardBottom">
+
+              <div class="cardPrice">
+                ₹4,999
+              </div>
+
+              <div class="view">
+                View
+              </div>
+
+            </div>
+
+          </div>
+
+        </article>
+
+
+        <!-- CARD 04 -->
+
+        <article class="card">
+
+          <div class="cardImage">
+
+            <div class="cardNumber">
+              04
+            </div>
+
+            <img
+              src="IMG_7849.png"
+              alt="Saree 04">
+
+          </div>
+
+          <div class="cardInfo">
+
+            <div class="cardName">
+              Ziya Silk
+            </div>
+
+            <div class="cardMeta">
+              <span>Silk</span>
+              <span>Jari</span>
+            </div>
+
+            <div class="cardBottom">
+
+              <div class="cardPrice">
+                ₹5,299
+              </div>
+
+              <div class="view">
+                View
+              </div>
+
+            </div>
+
+          </div>
+
+        </article>
+
+
+      </div>
+
+    </section>
+
+
+    <!-- Flying duplicate used for smooth transition -->
+
+    <img
+      id="flyingSaree"
+      class="flyingSaree"
+      src="IMG_7846.png"
+      alt="">
+
+
+  </div>
 
 </section>
 
 
+<!-- =========================
+     FOOTER
+========================= -->
+
 <footer class="footer">
 
-  <span>AURA Atelier</span>
+  <span>
+    AURA Atelier
+  </span>
 
-  <span>Crafted in India</span>
+  <span>
+    Designed for modern luxury
+  </span>
 
-  <span>© 2026</span>
+  <span>
+    © 2026
+  </span>
 
 </footer>
 
@@ -1114,66 +1452,118 @@ body:before{
    ELEMENTS
 ========================================= */
 
-const model = document.getElementById("mainModel");
-const modelStage = document.getElementById("modelStage");
-const details = document.getElementById("details");
-const palluSweep = document.getElementById("palluSweep");
-const collection = document.getElementById("collection");
-const flying = document.getElementById("flyingSaree");
-const centerCard = document.getElementById("centerCard");
-const centerImage = document.getElementById("centerImage");
+const model =
+  document.getElementById("mainModel");
+
+const modelArea =
+  document.getElementById("modelArea");
+
+const dish =
+  document.getElementById("dish");
+
+const pallu =
+  document.getElementById("pallu");
+
+const details =
+  document.getElementById("details");
+
+const collection =
+  document.getElementById("collection");
+
+const flying =
+  document.getElementById("flyingSaree");
+
+const centerCard =
+  document.getElementById("centerCard");
 
 
 /* =========================================
-   ANIMATION STATE
+   SCROLL SYSTEM
 ========================================= */
 
-let scrollProgress = 0;
-let targetProgress = 0;
+let target = 0;
+let progress = 0;
 
-let automaticRotation = 0;
+let rotation = 0;
 
-let lastTime = performance.now();
+let lastTime =
+  performance.now();
+
+
+window.addEventListener(
+  "scroll",
+  () => {
+
+    const max =
+      document.body.scrollHeight -
+      window.innerHeight;
+
+    target =
+      max > 0
+      ? window.scrollY / max
+      : 0;
+
+  },
+  {passive:true}
+);
 
 
 /* =========================================
-   LERP
+   HELPERS
 ========================================= */
 
-function lerp(a,b,t){
+function clamp(
+  value,
+  min,
+  max
+){
+
+  return Math.max(
+    min,
+    Math.min(max,value)
+  );
+
+}
+
+
+function lerp(
+  a,
+  b,
+  t
+){
+
   return a + (b-a)*t;
+
+}
+
+
+function smoothstep(
+  edge0,
+  edge1,
+  value
+){
+
+  let x =
+    clamp(
+      (value-edge0) /
+      (edge1-edge0),
+      0,
+      1
+    );
+
+  return x*x*(3-2*x);
+
 }
 
 
 /* =========================================
-   SCROLL
-========================================= */
-
-window.addEventListener("scroll",()=>{
-
-  const maxScroll =
-    document.documentElement.scrollHeight -
-    window.innerHeight;
-
-  targetProgress =
-    Math.min(
-      1,
-      Math.max(
-        0,
-        window.scrollY / maxScroll
-      )
-    );
-
-});
-
-
-/* =========================================
-   MAIN ANIMATION
+   ANIMATION
 ========================================= */
 
 function animate(){
 
-  const now = performance.now();
+  const now =
+    performance.now();
 
   const delta =
     Math.min(
@@ -1184,373 +1574,299 @@ function animate(){
   lastTime = now;
 
 
-  /* super smooth scroll */
+  /* smooth scroll */
 
-  scrollProgress =
+  progress =
     lerp(
-      scrollProgress,
-      targetProgress,
+      progress,
+      target,
       .075
     );
 
 
-  /*
-    SECTION TIMING
+  /* continuous rotation */
 
-    0 - .20
-    HERO
-
-    .20 - .48
-    PALLU + DETAILS
-
-    .48 - .68
-    LEFT ROTATION
-
-    .68 - .84
-    MOVE TO COLLECTION
-
-    .84 - 1
-    COLLECTION
-  */
+  rotation +=
+    delta * .020;
 
 
   /* =====================================
-     HERO MODEL POSITION
+     PHASE 1
+     HERO
   ===================================== */
 
-  let x = 0;
-  let y = 0;
-  let scale = 1;
+  const hero =
+    smoothstep(
+      0,
+      .20,
+      progress
+    );
 
 
-  if(scrollProgress < .20){
+  /* model moves slightly upward */
 
-    const p =
-      scrollProgress / .20;
+  const heroX =
+    lerp(
+      0,
+      -25,
+      hero
+    );
 
-    x =
-      lerp(
-        0,
-        -30,
-        p
-      );
-
-    y =
-      lerp(
-        0,
-        -20,
-        p
-      );
-
-    scale =
-      lerp(
-        1,
-        1.06,
-        p
-      );
-
-  }
+  const heroY =
+    lerp(
+      0,
+      -15,
+      hero
+    );
 
 
   /* =====================================
-     PALLU + MOVE LEFT
+     PHASE 2
+     PALLU
   ===================================== */
 
-  if(
-    scrollProgress >= .20 &&
-    scrollProgress < .48
-  ){
-
-    const p =
-      (scrollProgress-.20)/.28;
-
-    x =
-      lerp(
-        -30,
-        -150,
-        p
-      );
-
-    y =
-      lerp(
-        -20,
-        0,
-        p
-      );
-
-    scale =
-      lerp(
-        1.06,
-        .90,
-        p
-      );
-
-    /* pallu sweep */
-
-    palluSweep.style.opacity =
-      Math.sin(p*Math.PI)*.85;
-
-    palluSweep.style.transform =
-      `
-      rotate(-12deg)
-      translateX(${lerp(100,-180,p)}px)
-      scaleX(${lerp(.6,1.3,p)})
-      `;
-
-  }else{
-
-    palluSweep.style.opacity=0;
-
-  }
+  const palluProgress =
+    smoothstep(
+      .16,
+      .43,
+      progress
+    );
 
 
-  /* =====================================
-     ROTATION CONTINUES
-  ===================================== */
-
-  automaticRotation +=
-    delta * .018;
+  pallu.style.opacity =
+    palluProgress *
+    (1-palluProgress*.72);
 
 
-  /*
-    Only subtle Y rotation.
-    Not a huge card flip.
-  */
-
-  let rotation =
-    automaticRotation;
-
-
-  /* =====================================
-     AFTER DETAILS:
-     MODEL STAYS LEFT
-  ===================================== */
-
-  if(
-    scrollProgress >= .48 &&
-    scrollProgress < .68
-  ){
-
-    x =
-      -150;
-
-    y =
-      0;
-
-    scale =
-      .90;
-
-  }
+  const palluX =
+    lerp(
+      130,
+      -500,
+      palluProgress
+    );
 
 
-  /* =====================================
-     MOVE MODEL TOWARDS CENTER CARD
-  ===================================== */
-
-  if(scrollProgress >= .68){
-
-    const p =
-      Math.min(
-        1,
-        (scrollProgress-.68)/.16
-      );
-
-    /*
-      Starts from left
-      ends around center
-    */
-
-    x =
-      lerp(
-        -150,
-        0,
-        p
-      );
-
-    y =
-      lerp(
-        0,
-        95,
-        p
-      );
-
-    scale =
-      lerp(
-        .90,
-        .48,
-        p
-      );
-
-    /*
-      Slightly reduce rotation
-      as it enters card.
-    */
-
-    rotation =
-      automaticRotation * (1-p);
-
-  }
-
-
-  /* =====================================
-     MODEL TRANSFORM
-  ===================================== */
-
-  model.style.transform =
+  pallu.style.transform =
     `
-    translate3d(${x}px,${y}px,0)
-    scale(${scale})
-    rotateY(${rotation}deg)
+      rotate(-13deg)
+      translateX(${palluX}px)
     `;
 
 
   /* =====================================
-     DETAILS REVEAL
+     PHASE 3
+     MOVE MODEL LEFT
   ===================================== */
 
-  let detailOpacity = 0;
-  let detailX = 70;
+  const showcase =
+    smoothstep(
+      .22,
+      .50,
+      progress
+    );
 
-  if(scrollProgress < .20){
 
-    detailOpacity=0;
+  const modelX =
+    lerp(
+      0,
+      -30,
+      showcase
+    );
 
-  }
 
-  if(
-    scrollProgress >= .20 &&
-    scrollProgress < .48
-  ){
+  const modelScale =
+    lerp(
+      1,
+      .78,
+      showcase
+    );
 
-    const p =
-      (scrollProgress-.20)/.28;
 
-    detailOpacity =
-      p;
+  const modelY =
+    lerp(
+      0,
+      20,
+      showcase
+    );
 
-    detailX =
-      lerp(
-        70,
-        0,
-        p
-      );
 
-  }
+  /* =====================================
+     SHOWCASE ROTATION
+  ===================================== */
 
-  if(scrollProgress >= .48){
+  let showcaseRotation =
+    rotation;
 
-    detailOpacity=1;
-    detailX=0;
+  /* slow cinematic rotation */
 
-  }
+  model.style.transform =
+    `
+      translate3d(
+        ${modelX}vw,
+        ${modelY}px,
+        0
+      )
+      scale(${modelScale})
+      rotateY(${showcaseRotation}deg)
+    `;
+
+
+  /* =====================================
+     DISH APPEARS ONLY HERE
+  ===================================== */
+
+  const dishProgress =
+    smoothstep(
+      .38,
+      .52,
+      progress
+    );
+
+
+  dish.style.opacity =
+    dishProgress;
+
+
+  dish.style.transform =
+    `
+      translateX(-50%)
+      perspective(600px)
+      rotateX(60deg)
+      scale(${.75 + dishProgress*.25})
+    `;
+
+
+  /* =====================================
+     DETAILS APPEAR
+  ===================================== */
+
+  const detailsProgress =
+    smoothstep(
+      .40,
+      .58,
+      progress
+    );
+
 
   details.style.opacity =
-    detailOpacity;
+    detailsProgress;
 
   details.style.transform =
-    `translateX(${detailX}px)`;
+    `
+      translateX(
+        ${(1-detailsProgress)*80}px
+      )
+    `;
+
+
+  /* =====================================
+     PHASE 4
+     MODEL GOES TOWARD CENTER CARD
+  ===================================== */
+
+  const cardTransition =
+    smoothstep(
+      .63,
+      .78,
+      progress
+    );
+
+
+  /*
+     During this phase the original
+     model smoothly travels downward
+     and toward the collection center.
+  */
+
+  if(cardTransition > 0){
+
+    const moveX =
+      lerp(
+        -30,
+        4,
+        cardTransition
+      );
+
+    const moveY =
+      lerp(
+        20,
+        250,
+        cardTransition
+      );
+
+    const scale =
+      lerp(
+        .78,
+        .28,
+        cardTransition
+      );
+
+
+    model.style.transform =
+      `
+        translate3d(
+          ${moveX}vw,
+          ${moveY}px,
+          0
+        )
+        scale(${scale})
+        rotateY(${rotation}deg)
+      `;
+
+
+    /* dish fades away */
+
+    dish.style.opacity =
+      1-cardTransition;
+
+  }
 
 
   /* =====================================
      COLLECTION APPEARS
   ===================================== */
 
-  let collectionOpacity=0;
-  let collectionY=40;
+  const collectionProgress =
+    smoothstep(
+      .66,
+      .79,
+      progress
+    );
 
-  if(scrollProgress > .70){
-
-    const p =
-      Math.min(
-        1,
-        (scrollProgress-.70)/.12
-      );
-
-    collectionOpacity=p;
-
-    collectionY =
-      lerp(
-        40,
-        0,
-        p
-      );
-
-  }
 
   collection.style.opacity =
-    collectionOpacity;
+    collectionProgress;
 
   collection.style.transform =
-    `translateY(${collectionY}px)`;
+    `
+      translateY(
+        ${(1-collectionProgress)*60}px
+      )
+    `;
 
 
   /* =====================================
-     CENTER CARD FLOAT
+     CARD FLOATING
   ===================================== */
 
-  const floatY =
-    Math.sin(now*.0015)*4;
+  const float =
+    Math.sin(
+      now*.0014
+    ) * 5;
+
 
   centerCard.style.marginTop =
-    `${-8 + floatY}px`;
+    `${-8 + float}px`;
 
 
-  requestAnimationFrame(animate);
+  requestAnimationFrame(
+    animate
+  );
 
 }
 
 
 animate();
-
-
-/* =========================================
-   BAG
-========================================= */
-
-let bagCount=0;
-
-function addBag(){
-
-  bagCount++;
-
-  document.getElementById("bagCount").textContent =
-    bagCount;
-
-  showToast("Added to your AURA bag");
-
-}
-
-
-/* =========================================
-   TOAST
-========================================= */
-
-function showToast(message){
-
-  const toast =
-    document.createElement("div");
-
-  toast.textContent=message;
-
-  toast.style.position="fixed";
-  toast.style.left="50%";
-  toast.style.bottom="30px";
-  toast.style.transform="translateX(-50%)";
-  toast.style.padding="13px 22px";
-  toast.style.background="#29251f";
-  toast.style.color="#fff";
-  toast.style.fontSize="10px";
-  toast.style.letterSpacing=".15em";
-  toast.style.textTransform="uppercase";
-  toast.style.zIndex="999";
-
-  document.body.appendChild(toast);
-
-  setTimeout(()=>{
-    toast.remove();
-  },1800);
-
-}
 
 </script>
 
