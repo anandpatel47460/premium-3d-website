@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>AURA — Premium Saree</title>
+<title>AURA — Premium Fashion</title>
 
 <style>
 *{
@@ -18,381 +18,532 @@ html{
 }
 
 body{
-  font-family:Arial,Helvetica,sans-serif;
-  color:#241c14;
-  background:
-    radial-gradient(circle at 20% 20%,rgba(218,174,103,.22),transparent 30%),
-    radial-gradient(circle at 85% 65%,rgba(255,255,255,.95),transparent 35%),
-    linear-gradient(120deg,#e9deca,#faf7ef 48%,#dfd0b8);
+  font-family:Arial, Helvetica, sans-serif;
+  color:#211c16;
+  background:#eee4d2;
   overflow-x:hidden;
 }
 
-/* luxury texture */
-body:before{
+/* =========================
+   PREMIUM BACKGROUND
+========================= */
+
+body::before{
   content:"";
   position:fixed;
   inset:0;
   pointer-events:none;
-  z-index:1;
-  opacity:.13;
+  z-index:-2;
+
   background:
+    radial-gradient(
+      circle at 50% 20%,
+      rgba(255,255,255,.95),
+      rgba(248,238,220,.8) 30%,
+      rgba(222,205,176,.85) 70%,
+      rgba(195,173,137,.9)
+    );
+}
+
+body::after{
+  content:"";
+  position:fixed;
+  inset:0;
+  pointer-events:none;
+  z-index:-1;
+  opacity:.18;
+
+  background-image:
     repeating-linear-gradient(
-      115deg,
-      transparent 0,
-      transparent 8px,
-      rgba(75,50,25,.08) 9px
+      0deg,
+      rgba(80,60,30,.04) 0px,
+      rgba(80,60,30,.04) 1px,
+      transparent 1px,
+      transparent 5px
     );
 }
 
 /* =========================
-   MAIN STORY
+   NAV
+========================= */
+
+.nav{
+  position:fixed;
+  top:0;
+  left:0;
+  width:100%;
+  height:78px;
+
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+
+  padding:0 5vw;
+
+  z-index:1000;
+
+  background:rgba(247,239,224,.62);
+  backdrop-filter:blur(18px);
+
+  border-bottom:1px solid rgba(80,55,25,.1);
+}
+
+.logo{
+  font-family:Georgia,serif;
+  font-size:25px;
+  letter-spacing:7px;
+}
+
+.nav-links{
+  display:flex;
+  gap:35px;
+  font-size:12px;
+  letter-spacing:2px;
+  text-transform:uppercase;
+}
+
+.nav-links a{
+  text-decoration:none;
+  color:#211c16;
+  opacity:.7;
+  transition:.3s;
+}
+
+.nav-links a:hover{
+  opacity:1;
+}
+
+.nav-cart{
+  border:1px solid rgba(60,40,20,.3);
+  padding:10px 17px;
+  border-radius:30px;
+  font-size:11px;
+  letter-spacing:1.5px;
+}
+
+/* =========================
+   HERO SCROLL AREA
 ========================= */
 
 .story{
-  height:440vh;
-  position:relative;
+  height:420vh;
 }
 
 .stage{
   position:sticky;
   top:0;
-  width:100%;
+
   height:100vh;
+  min-height:650px;
+
   overflow:hidden;
+
+  display:flex;
+  align-items:center;
+  justify-content:center;
 }
 
 /* =========================
-   HEADER
-========================= */
-
-.logo{
-  position:absolute;
-  top:28px;
-  left:5vw;
-  z-index:50;
-  font-size:18px;
-  letter-spacing:7px;
-}
-
-.menu{
-  position:absolute;
-  right:5vw;
-  top:30px;
-  z-index:50;
-  font-size:10px;
-  letter-spacing:3px;
-}
-
-/* =========================
-   BACKGROUND LIGHT
+   LIGHT
 ========================= */
 
 .light{
   position:absolute;
-  width:45vw;
-  height:45vw;
+
+  width:55vw;
+  height:55vw;
+
+  max-width:800px;
+  max-height:800px;
+
   border-radius:50%;
-  background:radial-gradient(
-    circle,
-    rgba(213,170,96,.25),
-    transparent 68%
-  );
-  filter:blur(18px);
-}
 
-.light1{
-  left:-15vw;
-  top:5vh;
-}
+  background:
+    radial-gradient(
+      circle,
+      rgba(255,255,255,.9) 0%,
+      rgba(255,241,211,.45) 38%,
+      transparent 70%
+    );
 
-.light2{
-  right:-20vw;
-  bottom:-20vh;
-}
+  filter:blur(10px);
 
-/* =========================
-   HERO TEXT
-========================= */
-
-.hero-text{
-  position:absolute;
-  left:8vw;
-  top:39%;
-  z-index:10;
-  max-width:330px;
-}
-
-.eyebrow{
-  font-size:9px;
-  letter-spacing:4px;
-  opacity:.55;
-  margin-bottom:15px;
-}
-
-.hero-text h1{
-  font-family:Georgia,serif;
-  font-size:clamp(55px,8vw,100px);
-  font-weight:400;
-  line-height:.86;
-}
-
-.hero-text p{
-  margin-top:25px;
-  max-width:260px;
-  font-size:12px;
-  line-height:1.8;
-  opacity:.62;
-}
-
-/* =========================
-   MAIN REAL IMAGE
-========================= */
-
-.saree-object{
-  position:absolute;
-  left:50%;
-  top:51%;
-  width:min(38vw,470px);
-  height:min(70vh,670px);
-  transform:
-    translate(-50%,-50%)
-    translate3d(0,0,0)
-    scale(1);
-
-  z-index:25;
-  will-change:transform;
   pointer-events:none;
 }
 
-.saree-spin{
-  width:100%;
-  height:100%;
-  display:flex;
-  justify-content:center;
-  align-items:center;
-  transform-style:preserve-3d;
-  will-change:transform;
+/* =========================
+   HERO TITLE
+========================= */
+
+.hero-copy{
+  position:absolute;
+
+  left:7vw;
+  top:50%;
+
+  transform:translateY(-50%);
+
+  width:310px;
+
+  z-index:20;
+
+  transition:
+    transform .08s linear,
+    opacity .08s linear;
 }
 
-.saree-spin img{
-  width:100%;
-  height:100%;
-  object-fit:contain;
-  object-position:center;
-  display:block;
+.eyebrow{
+  font-size:11px;
+  letter-spacing:4px;
+  text-transform:uppercase;
+  opacity:.55;
+  margin-bottom:18px;
+}
 
-  filter:
-    drop-shadow(0 30px 35px rgba(49,33,16,.24));
+.hero-copy h1{
+  font-family:Georgia,serif;
+
+  font-size:clamp(45px,6vw,90px);
+
+  font-weight:400;
+
+  line-height:.9;
+
+  margin-bottom:25px;
+}
+
+.hero-copy p{
+  font-size:13px;
+  line-height:1.8;
+  opacity:.62;
+
+  max-width:280px;
 }
 
 /* =========================
-   HERO LABEL
+   PRODUCT MODEL
 ========================= */
 
-.hero-label{
+.model-area{
   position:absolute;
-  right:8vw;
-  bottom:12vh;
-  text-align:right;
-  z-index:15;
+
+  left:50%;
+  top:50%;
+
+  width:min(43vw,560px);
+  height:min(70vh,700px);
+
+  transform:
+    translate(-50%,-50%);
+
+  display:flex;
+  align-items:center;
+  justify-content:center;
+
+  z-index:10;
+
+  perspective:1600px;
+
+  transition:
+    left .05s linear,
+    transform .05s linear;
 }
 
-.hero-label small{
-  display:block;
-  font-size:8px;
-  letter-spacing:3px;
-  opacity:.5;
+/*
+  IMPORTANT:
+  Outer wrapper controls position.
+  Inner wrapper controls rotation.
+*/
+
+.model-rotate{
+  position:relative;
+
+  width:100%;
+  height:100%;
+
+  display:flex;
+  align-items:center;
+  justify-content:center;
+
+  transform-style:preserve-3d;
+
+  will-change:transform;
 }
 
-.hero-label strong{
+.model-rotate img{
+  width:100%;
+  height:100%;
+
+  object-fit:contain;
+
+  object-position:center;
+
   display:block;
-  margin-top:6px;
-  font-family:Georgia,serif;
-  font-weight:400;
-  font-size:18px;
+
+  user-select:none;
+  -webkit-user-drag:none;
+
+  filter:
+    drop-shadow(0 30px 35px rgba(55,38,18,.25))
+    drop-shadow(0 5px 12px rgba(55,38,18,.12));
+
+  transform:
+    translateZ(20px)
+    scale(1);
+
+  transition:filter .3s ease;
+}
+
+/* floor shadow */
+
+.model-shadow{
+  position:absolute;
+
+  bottom:3%;
+
+  width:55%;
+  height:6%;
+
+  border-radius:50%;
+
+  background:rgba(50,35,20,.25);
+
+  filter:blur(18px);
+
+  transform:scaleX(1.2);
+
+  z-index:-1;
 }
 
 /* =========================
    PRODUCT DETAILS
 ========================= */
 
-.details{
+.product-details{
   position:absolute;
+
   right:7vw;
-  top:23%;
-  width:min(31vw,390px);
-  z-index:20;
+  top:50%;
+
+  transform:
+    translateY(-50%)
+    translateX(100px);
+
+  width:310px;
 
   opacity:0;
-  transform:translateX(80px);
-  pointer-events:none;
+
+  z-index:30;
+
+  transition:
+    opacity .1s linear,
+    transform .1s linear;
 }
 
-.details-top{
-  font-size:8px;
-  letter-spacing:4px;
+.detail-line{
+  width:45px;
+  height:1px;
+
+  background:#8d7145;
+
+  margin-bottom:20px;
+}
+
+.product-details .small{
+  font-size:10px;
+  letter-spacing:3px;
+  text-transform:uppercase;
   opacity:.5;
+
+  margin-bottom:12px;
 }
 
-.details h2{
-  margin-top:12px;
+.product-details h2{
   font-family:Georgia,serif;
-  font-size:clamp(35px,4.5vw,60px);
+
+  font-size:43px;
   font-weight:400;
-  line-height:.95;
+
+  margin-bottom:18px;
 }
 
 .description{
-  margin-top:18px;
-  font-size:11px;
+  font-size:13px;
   line-height:1.8;
   opacity:.62;
+
+  margin-bottom:24px;
 }
 
 .specs{
-  margin-top:24px;
-  border-top:1px solid rgba(50,35,20,.18);
+  border-top:1px solid rgba(60,40,20,.15);
 }
 
 .spec{
   display:flex;
   justify-content:space-between;
-  padding:12px 0;
-  border-bottom:1px solid rgba(50,35,20,.12);
-  font-size:10px;
+
+  padding:11px 0;
+
+  border-bottom:1px solid rgba(60,40,20,.12);
+
+  font-size:11px;
 }
 
-.spec span{
+.spec span:first-child{
   opacity:.5;
 }
 
-.price{
-  margin-top:22px;
-  font-family:Georgia,serif;
-  font-size:28px;
+.spec span:last-child{
+  font-weight:bold;
 }
 
-.actions{
+.price{
+  margin-top:25px;
+
+  font-family:Georgia,serif;
+
+  font-size:30px;
+}
+
+.buy-row{
   display:flex;
-  gap:8px;
-  margin-top:17px;
+  gap:10px;
+
+  margin-top:22px;
 }
 
 .btn{
-  padding:12px 17px;
-  border:1px solid rgba(40,28,15,.3);
-  background:rgba(255,255,255,.35);
-  font-size:8px;
-  letter-spacing:2px;
+  border:1px solid rgba(50,35,20,.4);
+
+  background:rgba(255,255,255,.3);
+
+  padding:13px 19px;
+
+  border-radius:30px;
+
+  font-size:10px;
+
+  letter-spacing:1.5px;
+
+  cursor:pointer;
+
+  transition:.3s;
 }
 
-.btn.dark{
-  background:#292016;
-  color:white;
+.btn.primary{
+  background:#241d15;
+  color:#fff;
+}
+
+.btn:hover{
+  transform:translateY(-3px);
 }
 
 /* =========================
-   CENTER CARD
+   CENTER PRODUCT CARD
 ========================= */
 
 .center-card{
   position:absolute;
+
   left:50%;
-  top:52%;
-  width:350px;
-  padding:14px;
+  top:50%;
 
-  background:rgba(255,251,242,.72);
-  backdrop-filter:blur(18px);
+  width:270px;
 
-  border:1px solid rgba(255,255,255,.8);
-
-  box-shadow:
-    0 35px 80px rgba(49,35,18,.2);
-
-  z-index:12;
+  transform:
+    translate(-50%,-35%)
+    scale(.75);
 
   opacity:0;
-  transform:
-    translate(-50%,120vh);
+
+  z-index:25;
+
+  padding:13px;
+
+  background:
+    rgba(255,250,241,.72);
+
+  backdrop-filter:blur(20px);
+
+  border:1px solid rgba(90,65,35,.14);
+
+  box-shadow:
+    0 30px 80px rgba(60,40,20,.18);
+
+  border-radius:5px;
+
+  transition:
+    opacity .08s linear,
+    transform .08s linear;
 }
 
 .center-image{
   width:100%;
-  height:285px;
+  height:340px;
+
   overflow:hidden;
-  background:#e6dac7;
+
+  background:
+    radial-gradient(
+      circle,
+      #fff8eb,
+      #e8d6b7
+    );
 }
 
 .center-image img{
   width:100%;
   height:100%;
+
   object-fit:contain;
+
+  filter:
+    drop-shadow(0 18px 20px rgba(50,35,20,.2));
 }
 
-.center-info{
-  padding:16px 5px 5px;
+.card-info{
+  padding:17px 5px 5px;
 }
 
-.center-title{
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
-}
-
-.center-title h3{
-  font-family:Georgia,serif;
-  font-size:22px;
-  font-weight:400;
-}
-
-.center-title span{
+.card-info small{
   font-size:9px;
+  letter-spacing:2px;
   opacity:.5;
 }
 
-.center-info p{
-  margin-top:7px;
-  font-size:9px;
-  line-height:1.6;
-  opacity:.55;
+.card-info h3{
+  font-family:Georgia,serif;
+
+  font-size:21px;
+  font-weight:400;
+
+  margin:7px 0;
 }
 
-.center-bottom{
-  margin-top:15px;
+.card-bottom{
   display:flex;
   justify-content:space-between;
   align-items:center;
 }
 
-.center-price{
+.card-price{
   font-family:Georgia,serif;
-  font-size:18px;
+  font-size:17px;
 }
 
-.center-view{
-  font-size:8px;
-  letter-spacing:2px;
-  border:1px solid rgba(40,25,10,.25);
-  padding:8px 12px;
-}
+.card-btn{
+  border:0;
+  background:#241d15;
+  color:#fff;
 
-/* =========================
-   FLOAT
-========================= */
+  border-radius:20px;
 
-@keyframes floatCard{
-  0%,100%{
-    margin-top:0;
-  }
+  padding:9px 14px;
 
-  50%{
-    margin-top:-12px;
-  }
-}
-
-.center-card.floating{
-  animation:floatCard 4s ease-in-out infinite;
+  font-size:9px;
+  letter-spacing:1px;
 }
 
 /* =========================
@@ -401,220 +552,389 @@ body:before{
 
 .collection{
   position:absolute;
+
+  bottom:-80vh;
+
   left:0;
-  bottom:-100vh;
+
   width:100%;
-  min-height:100vh;
 
-  padding:7vh 5vw 5vh;
+  padding:0 4vw 30px;
 
-  background:
-    linear-gradient(
-      180deg,
-      rgba(239,230,214,.96),
-      rgba(255,251,243,.99)
-    );
+  z-index:50;
 
-  z-index:40;
+  opacity:0;
+
+  transition:
+    opacity .1s linear,
+    bottom .1s linear;
 }
 
-.collection-head{
+.collection-title{
   display:flex;
   justify-content:space-between;
-  align-items:flex-end;
-  margin-bottom:22px;
+  align-items:end;
+
+  margin-bottom:15px;
 }
 
-.collection-head h2{
-  margin-top:8px;
+.collection-title h2{
   font-family:Georgia,serif;
-  font-size:clamp(38px,5vw,65px);
-  font-weight:400;
-  line-height:.9;
-}
 
-.collection-head p{
-  max-width:220px;
-  font-size:10px;
-  line-height:1.7;
-  opacity:.55;
-}
+  font-size:30px;
 
-/* =========================
-   4 PRODUCTS
-========================= */
-
-.products{
-  display:grid;
-  grid-template-columns:repeat(4,1fr);
-  gap:9px;
-}
-
-.product{
-  padding:9px;
-  background:rgba(255,255,255,.55);
-  border:1px solid rgba(60,40,20,.1);
-}
-
-.product-img{
-  width:100%;
-  height:270px;
-  background:#e5dac8;
-  overflow:hidden;
-}
-
-.product-img img{
-  width:100%;
-  height:100%;
-  object-fit:contain;
-  display:block;
-}
-
-.product-info{
-  padding:14px 4px 7px;
-}
-
-.product-info h3{
-  font-family:Georgia,serif;
-  font-size:18px;
   font-weight:400;
 }
 
-.product-info p{
-  margin-top:6px;
-  font-size:8px;
+.collection-title span{
+  font-size:9px;
+  letter-spacing:2px;
   opacity:.5;
 }
 
-.product-bottom{
-  margin-top:13px;
+.products{
+  display:grid;
+
+  grid-template-columns:
+    repeat(7,minmax(0,1fr));
+
+  gap:10px;
+}
+
+.product-card{
+  min-width:0;
+
+  background:
+    rgba(255,250,241,.66);
+
+  border:1px solid rgba(80,55,25,.12);
+
+  padding:8px;
+
+  border-radius:5px;
+
+  box-shadow:
+    0 18px 40px rgba(70,45,20,.1);
+
+  transition:
+    transform .4s ease,
+    box-shadow .4s ease;
+}
+
+.product-card:hover{
+  transform:translateY(-9px);
+
+  box-shadow:
+    0 28px 50px rgba(70,45,20,.18);
+}
+
+.product-image{
+  width:100%;
+  height:180px;
+
+  background:
+    radial-gradient(
+      circle,
+      #fffaf0,
+      #e6d2ae
+    );
+
   display:flex;
-  justify-content:space-between;
   align-items:center;
+  justify-content:center;
+
+  overflow:hidden;
 }
 
-.product-bottom strong{
+.product-image img{
+  width:100%;
+  height:100%;
+
+  object-fit:contain;
+
+  filter:
+    drop-shadow(0 12px 15px rgba(50,35,20,.18));
+
+  animation:
+    cardFloat 4s ease-in-out infinite;
+}
+
+.product-card:nth-child(2) img{
+  animation-delay:.4s;
+}
+
+.product-card:nth-child(3) img{
+  animation-delay:.8s;
+}
+
+.product-card:nth-child(4) img{
+  animation-delay:1.2s;
+}
+
+.product-card:nth-child(5) img{
+  animation-delay:1.6s;
+}
+
+.product-card:nth-child(6) img{
+  animation-delay:2s;
+}
+
+.product-card:nth-child(7) img{
+  animation-delay:2.4s;
+}
+
+@keyframes cardFloat{
+  0%,100%{
+    transform:translateY(0);
+  }
+
+  50%{
+    transform:translateY(-6px);
+  }
+}
+
+.product-card-info{
+  padding:10px 3px 3px;
+}
+
+.product-card-info h3{
   font-family:Georgia,serif;
+
+  font-size:14px;
+
   font-weight:400;
+
+  margin-bottom:5px;
 }
 
-.product-bottom span{
+.product-card-info p{
+  font-size:9px;
+  opacity:.5;
+
+  margin-bottom:8px;
+}
+
+.product-card-footer{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+}
+
+.product-card-price{
+  font-size:12px;
+  font-family:Georgia,serif;
+}
+
+.view-btn{
   font-size:8px;
-  letter-spacing:2px;
+
+  letter-spacing:1px;
+
+  border:1px solid rgba(50,35,20,.25);
+
+  padding:6px 8px;
+
+  border-radius:15px;
+
+  background:transparent;
+}
+
+/* =========================
+   SCROLL INDICATOR
+========================= */
+
+.scroll{
+  position:absolute;
+
+  bottom:30px;
+  left:50%;
+
+  transform:translateX(-50%);
+
+  z-index:100;
+
+  font-size:9px;
+
+  letter-spacing:3px;
+
+  opacity:.45;
+
+  text-transform:uppercase;
+}
+
+.scroll::after{
+  content:"";
+
+  display:block;
+
+  width:1px;
+  height:35px;
+
+  background:#5d4930;
+
+  margin:8px auto 0;
+
+  animation:
+    scrollLine 1.5s ease-in-out infinite;
+}
+
+@keyframes scrollLine{
+  0%,100%{
+    transform:scaleY(.3);
+    transform-origin:top;
+  }
+
+  50%{
+    transform:scaleY(1);
+    transform-origin:top;
+  }
 }
 
 /* =========================
    MOBILE
 ========================= */
 
-@media(max-width:700px){
+@media(max-width:800px){
 
-  .story{
-    height:450vh;
+  .nav{
+    height:65px;
+    padding:0 20px;
   }
 
   .logo{
-    left:20px;
-    top:22px;
-    font-size:15px;
+    font-size:18px;
     letter-spacing:5px;
   }
 
-  .menu{
-    right:20px;
-    top:24px;
-    font-size:8px;
+  .nav-links{
+    display:none;
   }
 
-  .hero-text{
+  .nav-cart{
+    padding:8px 12px;
+  }
+
+  .stage{
+    min-height:650px;
+  }
+
+  .hero-copy{
     left:20px;
-    top:20%;
-    max-width:210px;
+    top:16%;
+
+    transform:none;
+
+    width:190px;
+
+    z-index:30;
   }
 
-  .hero-text h1{
-    font-size:48px;
+  .hero-copy h1{
+    font-size:47px;
   }
 
-  .hero-text p{
-    font-size:10px;
+  .hero-copy p{
+    font-size:11px;
     max-width:190px;
   }
 
-  .saree-object{
-    width:76vw;
-    height:58vh;
-    top:57%;
+  .model-area{
+    width:78vw;
+    height:62vh;
+
+    top:55%;
   }
 
-  .hero-label{
+  .product-details{
     right:20px;
-    bottom:10vh;
+    top:auto;
+    bottom:7%;
+
+    width:calc(100% - 40px);
+
+    transform:
+      translateY(50px);
+
+    padding:15px;
+
+    border-radius:8px;
+
+    background:rgba(255,249,237,.75);
+
+    backdrop-filter:blur(15px);
   }
 
-  .hero-label strong{
-    font-size:15px;
-  }
-
-  .details{
-    left:20px;
-    right:20px;
-    top:16%;
-    width:auto;
-  }
-
-  .details h2{
-    font-size:38px;
+  .product-details h2{
+    font-size:28px;
   }
 
   .description{
-    font-size:10px;
+    display:none;
   }
 
   .spec{
-    padding:9px 0;
-    font-size:9px;
+    padding:7px 0;
+  }
+
+  .price{
+    margin-top:12px;
+    font-size:23px;
+  }
+
+  .buy-row{
+    margin-top:10px;
   }
 
   .center-card{
-    width:78vw;
-    top:54%;
+    width:235px;
   }
 
   .center-image{
-    height:255px;
+    height:290px;
   }
 
   .collection{
-    padding:38px 18px 25px;
+    padding:0 15px 20px;
   }
 
-  .collection-head{
-    display:block;
-    margin-bottom:18px;
-  }
-
-  .collection-head h2{
-    font-size:40px;
-  }
-
-  .collection-head p{
-    margin-top:12px;
+  .collection-title h2{
+    font-size:23px;
   }
 
   .products{
     display:flex;
+
     overflow-x:auto;
+
     gap:8px;
-    padding-bottom:12px;
+
+    scroll-snap-type:x mandatory;
+
+    padding-bottom:10px;
+
+    scrollbar-width:none;
   }
 
-  .product{
-    flex:0 0 220px;
+  .products::-webkit-scrollbar{
+    display:none;
   }
 
-  .product-img{
-    height:245px;
+  .product-card{
+    flex:0 0 145px;
+
+    scroll-snap-align:start;
+  }
+
+  .product-image{
+    height:170px;
+  }
+
+  .product-card-info h3{
+    font-size:12px;
+  }
+
+  .product-card-info p{
+    font-size:8px;
   }
 }
 </style>
@@ -622,28 +942,46 @@ body:before{
 
 <body>
 
-<div class="story">
+<!-- =========================
+     NAVIGATION
+========================= -->
+
+<nav class="nav">
+
+  <div class="logo">
+    AURA
+  </div>
+
+  <div class="nav-links">
+    <a href="#">Home</a>
+    <a href="#collection">Collection</a>
+    <a href="#">About</a>
+  </div>
+
+  <div class="nav-cart">
+    BAG <span id="bagCount">0</span>
+  </div>
+
+</nav>
+
+
+<!-- =========================
+     HERO STORY
+========================= -->
+
+<section class="story" id="story">
 
   <div class="stage">
 
-    <div class="light light1"></div>
-    <div class="light light2"></div>
-
-    <!-- HEADER -->
-
-    <div class="logo">AURA</div>
-
-    <div class="menu">
-      COLLECTION &nbsp;&nbsp; MENU
-    </div>
+    <div class="light"></div>
 
 
-    <!-- HERO -->
+    <!-- HERO COPY -->
 
-    <div class="hero-text" id="heroText">
+    <div class="hero-copy" id="heroCopy">
 
       <div class="eyebrow">
-        NEW COLLECTION · 2026
+        AURA / 01
       </div>
 
       <h1>
@@ -652,160 +990,132 @@ body:before{
       </h1>
 
       <p>
-        A contemporary expression of Indian
-        craftsmanship, designed for modern
-        celebrations.
+        A statement of refined craftsmanship,
+        woven for celebrations and timeless
+        occasions.
       </p>
 
     </div>
 
 
-    <!-- =================================
-         SAME REAL SAREE IMAGE
-    ================================== -->
+    <!-- MAIN MODEL -->
 
-    <div class="saree-object" id="sareeObject">
+    <div class="model-area" id="modelArea">
 
-      <div class="saree-spin" id="sareeSpin">
+      <div class="model-rotate" id="modelRotate">
 
         <img
-          src="IMG_7839.jpeg"
-          alt="Dola Silk Saree"
+          src="IMG_7846.png"
+          alt="Premium Dola Silk Saree"
         >
+
+        <div class="model-shadow"></div>
 
       </div>
 
     </div>
 
 
-    <!-- HERO LABEL -->
+    <!-- PRODUCT DETAILS -->
 
-    <div class="hero-label" id="heroLabel">
+    <div class="product-details" id="details">
 
-      <small>
-        PREMIUM WEAVE
-      </small>
+      <div class="detail-line"></div>
 
-      <strong>
-        Dola Silk · Jacquard
-      </strong>
-
-    </div>
-
-
-    <!-- =================================
-         PRODUCT DETAILS
-    ================================== -->
-
-    <div class="details" id="details">
-
-      <div class="details-top">
-        SIGNATURE COLLECTION
+      <div class="small">
+        Featured Saree
       </div>
 
       <h2>
-        Dola Silk<br>
-        Jacquard
+        Royal Dola
       </h2>
 
-      <div class="description">
-        A rich woven saree with a luxurious
-        zari border and elegant drape,
-        created for weddings and festive
-        occasions.
-      </div>
+      <p class="description">
+        A premium jacquard Dola Silk saree
+        featuring an intricate zari border
+        and refined festive finish.
+      </p>
 
       <div class="specs">
 
         <div class="spec">
           <span>Fabric</span>
-          <strong>Dola Silk</strong>
+          <span>Dola Silk</span>
         </div>
 
         <div class="spec">
           <span>Weave</span>
-          <strong>Jacquard</strong>
+          <span>Jacquard</span>
         </div>
 
         <div class="spec">
           <span>Border</span>
-          <strong>Premium Zari</strong>
+          <span>Premium Zari</span>
         </div>
 
         <div class="spec">
           <span>Colour</span>
-          <strong>Royal Blue</strong>
+          <span>Royal Blue</span>
         </div>
 
         <div class="spec">
           <span>Occasion</span>
-          <strong>Wedding / Festive</strong>
+          <span>Wedding / Festive</span>
         </div>
 
       </div>
 
       <div class="price">
-        ₹ 8,990
+        ₹8,990
       </div>
 
-      <div class="actions">
+      <div class="buy-row">
 
-        <div class="btn">
-          VIEW DETAILS
-        </div>
-
-        <div class="btn dark">
+        <button class="btn primary" onclick="addBag()">
           ADD TO BAG
-        </div>
+        </button>
+
+        <button class="btn">
+          VIEW
+        </button>
 
       </div>
 
     </div>
 
 
-    <!-- =================================
-         SAME PRODUCT CENTER CARD
-    ================================== -->
+    <!-- CENTER CARD -->
 
     <div class="center-card" id="centerCard">
 
       <div class="center-image">
 
         <img
-          src="IMG_7839.jpeg"
-          alt="Dola Silk Saree"
+          src="IMG_7846.png"
+          alt="Royal Dola Saree"
         >
 
       </div>
 
-      <div class="center-info">
+      <div class="card-info">
 
-        <div class="center-title">
+        <small>
+          SIGNATURE COLLECTION
+        </small>
 
-          <h3>
-            Dola Silk
-          </h3>
+        <h3>
+          Royal Dola
+        </h3>
 
-          <span>
-            01
-          </span>
+        <div class="card-bottom">
 
-        </div>
-
-        <p>
-          Jacquard weave · Premium zari ·
-          Luxury festive collection
-        </p>
-
-        <div class="center-bottom">
-
-          <div class="center-price">
-            ₹ 8,990
+          <div class="card-price">
+            ₹8,990
           </div>
 
-          <div class="center-view">
-            VIEW PRODUCT →
-          </div>
+          <button class="card-btn" onclick="addBag()">
+            ADD
+          </button>
 
         </div>
 
@@ -814,32 +1124,26 @@ body:before{
     </div>
 
 
-    <!-- =================================
-         COLLECTION
-    ================================== -->
+    <!-- SCROLL -->
 
-    <section class="collection" id="collection">
+    <div class="scroll">
+      Scroll to explore
+    </div>
 
-      <div class="collection-head">
 
-        <div>
+    <!-- COLLECTION -->
 
-          <div class="eyebrow">
-            AURA COLLECTION
-          </div>
+    <div class="collection" id="collection">
 
-          <h2>
-            Curated<br>
-            Silhouettes
-          </h2>
+      <div class="collection-title">
 
-        </div>
+        <h2>
+          The Collection
+        </h2>
 
-        <p>
-          Explore our selection of statement
-          sarees created for weddings,
-          celebrations and special evenings.
-        </p>
+        <span>
+          07 SIGNATURE PIECES
+        </span>
 
       </div>
 
@@ -847,194 +1151,319 @@ body:before{
       <div class="products">
 
 
-        <!-- PRODUCT 1 -->
+        <!-- 01 -->
 
-        <article class="product">
+        <div class="product-card">
 
-          <div class="product-img">
+          <div class="product-image">
 
             <img
-              src="IMG_7839.jpeg"
-              alt="Dola Royale"
+              src="IMG_7846.png"
+              alt="Saree 01"
             >
 
           </div>
 
-          <div class="product-info">
+          <div class="product-card-info">
 
-            <h3>
-              Dola Royale
-            </h3>
+            <h3>Royal Dola</h3>
 
             <p>
-              Dola Silk · Jacquard
+              Jacquard · Zari
             </p>
 
-            <div class="product-bottom">
+            <div class="product-card-footer">
 
-              <strong>
-                ₹ 8,990
-              </strong>
-
-              <span>
-                VIEW →
+              <span class="product-card-price">
+                ₹8,990
               </span>
+
+              <button
+                class="view-btn"
+                onclick="addBag()"
+              >
+                ADD
+              </button>
 
             </div>
 
           </div>
 
-        </article>
+        </div>
 
 
-        <!-- PRODUCT 2 -->
+        <!-- 02 -->
 
-        <article class="product">
+        <div class="product-card">
 
-          <div class="product-img">
+          <div class="product-image">
 
             <img
-              src="IMG_7838.jpeg"
-              alt="Royal Weave"
+              src="IMG_7847.png"
+              alt="Saree 02"
             >
 
           </div>
 
-          <div class="product-info">
+          <div class="product-card-info">
 
-            <h3>
-              Royal Weave
-            </h3>
+            <h3>Signature 02</h3>
 
             <p>
-              Premium Silk · Zari
+              Premium Collection
             </p>
 
-            <div class="product-bottom">
+            <div class="product-card-footer">
 
-              <strong>
-                ₹ 9,490
-              </strong>
-
-              <span>
-                VIEW →
+              <span class="product-card-price">
+                ₹9,490
               </span>
+
+              <button
+                class="view-btn"
+                onclick="addBag()"
+              >
+                ADD
+              </button>
 
             </div>
 
           </div>
 
-        </article>
+        </div>
 
 
-        <!-- PRODUCT 3 -->
+        <!-- 03 -->
 
-        <article class="product">
+        <div class="product-card">
 
-          <div class="product-img">
+          <div class="product-image">
 
             <img
-              src="IMG_7837.jpeg"
-              alt="Heritage Gold"
+              src="IMG_7848.png"
+              alt="Saree 03"
             >
 
           </div>
 
-          <div class="product-info">
+          <div class="product-card-info">
 
-            <h3>
-              Heritage Gold
-            </h3>
+            <h3>Signature 03</h3>
 
             <p>
-              Jacquard · Designer Border
+              Premium Collection
             </p>
 
-            <div class="product-bottom">
+            <div class="product-card-footer">
 
-              <strong>
-                ₹ 10,990
-              </strong>
-
-              <span>
-                VIEW →
+              <span class="product-card-price">
+                ₹9,990
               </span>
+
+              <button
+                class="view-btn"
+                onclick="addBag()"
+              >
+                ADD
+              </button>
 
             </div>
 
           </div>
 
-        </article>
+        </div>
 
 
-        <!-- PRODUCT 4 -->
+        <!-- 04 -->
 
-        <article class="product">
+        <div class="product-card">
 
-          <div class="product-img">
+          <div class="product-image">
 
             <img
-              src="IMG_7836.jpeg"
-              alt="Midnight Silk"
+              src="IMG_7849.png"
+              alt="Saree 04"
             >
 
           </div>
 
-          <div class="product-info">
+          <div class="product-card-info">
 
-            <h3>
-              Midnight Silk
-            </h3>
+            <h3>Signature 04</h3>
 
             <p>
-              Premium Silk · Zari Border
+              Premium Collection
             </p>
 
-            <div class="product-bottom">
+            <div class="product-card-footer">
 
-              <strong>
-                ₹ 11,490
-              </strong>
-
-              <span>
-                VIEW →
+              <span class="product-card-price">
+                ₹10,490
               </span>
+
+              <button
+                class="view-btn"
+                onclick="addBag()"
+              >
+                ADD
+              </button>
 
             </div>
 
           </div>
 
-        </article>
+        </div>
+
+
+        <!-- 05 -->
+
+        <div class="product-card">
+
+          <div class="product-image">
+
+            <img
+              src="IMG_7850.png"
+              alt="Saree 05"
+            >
+
+          </div>
+
+          <div class="product-card-info">
+
+            <h3>Signature 05</h3>
+
+            <p>
+              Premium Collection
+            </p>
+
+            <div class="product-card-footer">
+
+              <span class="product-card-price">
+                ₹8,790
+              </span>
+
+              <button
+                class="view-btn"
+                onclick="addBag()"
+              >
+                ADD
+              </button>
+
+            </div>
+
+          </div>
+
+        </div>
+
+
+        <!-- 06 -->
+
+        <div class="product-card">
+
+          <div class="product-image">
+
+            <img
+              src="IMG_7851.png"
+              alt="Saree 06"
+            >
+
+          </div>
+
+          <div class="product-card-info">
+
+            <h3>Signature 06</h3>
+
+            <p>
+              Premium Collection
+            </p>
+
+            <div class="product-card-footer">
+
+              <span class="product-card-price">
+                ₹11,490
+              </span>
+
+              <button
+                class="view-btn"
+                onclick="addBag()"
+              >
+                ADD
+              </button>
+
+            </div>
+
+          </div>
+
+        </div>
+
+
+        <!-- 07 -->
+
+        <div class="product-card">
+
+          <div class="product-image">
+
+            <img
+              src="IMG_7852.png"
+              alt="Saree 07"
+            >
+
+          </div>
+
+          <div class="product-card-info">
+
+            <h3>Signature 07</h3>
+
+            <p>
+              Premium Collection
+            </p>
+
+            <div class="product-card-footer">
+
+              <span class="product-card-price">
+                ₹12,490
+              </span>
+
+              <button
+                class="view-btn"
+                onclick="addBag()"
+              >
+                ADD
+              </button>
+
+            </div>
+
+          </div>
+
+        </div>
+
 
       </div>
 
-    </section>
+    </div>
 
   </div>
 
-</div>
+</section>
 
 
 <script>
 
-/* =========================================
+/* =========================
    ELEMENTS
-========================================= */
+========================= */
 
 const story =
-  document.querySelector(".story");
+  document.getElementById("story");
 
-const sareeObject =
-  document.getElementById("sareeObject");
+const modelArea =
+  document.getElementById("modelArea");
 
-const sareeSpin =
-  document.getElementById("sareeSpin");
+const modelRotate =
+  document.getElementById("modelRotate");
 
-const heroText =
-  document.getElementById("heroText");
-
-const heroLabel =
-  document.getElementById("heroLabel");
+const heroCopy =
+  document.getElementById("heroCopy");
 
 const details =
   document.getElementById("details");
@@ -1045,313 +1474,422 @@ const centerCard =
 const collection =
   document.getElementById("collection");
 
-
-/* =========================================
-   SMOOTH SCROLL
-========================================= */
-
-let targetScroll =
-  window.scrollY;
-
-let smoothScroll =
-  window.scrollY;
-
-window.addEventListener(
-  "scroll",
-  () => {
-    targetScroll =
-      window.scrollY;
-  },
-  {passive:true}
-);
+let targetProgress = 0;
+let currentProgress = 0;
 
 
-/* =========================================
-   HELPERS
-========================================= */
+/* =========================
+   GET SCROLL PROGRESS
+========================= */
 
-function clamp(value,min,max){
-  return Math.max(
-    min,
-    Math.min(max,value)
-  );
-}
+function getProgress(){
 
-function lerp(a,b,t){
-  return a+(b-a)*t;
-}
+  const rect =
+    story.getBoundingClientRect();
 
-
-/* =========================================
-   MAIN ANIMATION
-========================================= */
-
-function animate(){
-
-  smoothScroll =
-    lerp(
-      smoothScroll,
-      targetScroll,
-      0.075
-    );
-
-
-  const maxScroll =
+  const max =
     story.offsetHeight -
     window.innerHeight;
 
+  let p =
+    -rect.top / max;
 
-  let progress =
-    smoothScroll /
-    maxScroll;
+  return Math.max(
+    0,
+    Math.min(1,p)
+  );
+
+}
 
 
-  progress =
-    clamp(progress,0,1);
+/* =========================
+   SMOOTH ANIMATION LOOP
+========================= */
+
+function animate(){
+
+  targetProgress =
+    getProgress();
+
+  /*
+    Very smooth interpolation.
+    This prevents jumping.
+  */
+
+  currentProgress +=
+    (targetProgress-currentProgress)*0.075;
+
+  updateScene();
+
+  requestAnimationFrame(animate);
+
+}
 
 
-  /* ======================================
-     PHASE 1
+/* =========================
+   SCENE
+========================= */
+
+function updateScene(){
+
+  const p =
+    currentProgress;
+
+
+  /* --------------------------------
      HERO
-  ====================================== */
+  -------------------------------- */
 
-  if(progress < .20){
+  if(p < .18){
 
-    const p =
-      progress/.20;
+    const hero =
+      p/.18;
 
+    heroCopy.style.opacity =
+      1-hero*.85;
 
-    sareeObject.style.transform =
-      `
-      translate(-50%,-50%)
-      translate3d(
-        ${Math.sin(p*Math.PI)*-10}px,
-        ${Math.sin(p*Math.PI)*-10}px,
-        0
-      )
-      scale(${lerp(1,.95,p)})
-      `;
+    heroCopy.style.transform =
+      `translateY(${-50-hero*20}%)`;
 
+  }else{
 
-    sareeSpin.style.transform =
-      `
-      rotateY(${p*8}deg)
-      `;
-
-
-    heroText.style.opacity =
-      1-p;
-
-    heroLabel.style.opacity =
-      1-p;
-
-    details.style.opacity=0;
-
-    centerCard.style.opacity=0;
+    heroCopy.style.opacity = 0;
 
   }
 
 
-  /* ======================================
-     PHASE 2
-     MOVE TO LEFT
-  ====================================== */
+  /* --------------------------------
+     MODEL POSITION
+  -------------------------------- */
 
-  else if(progress < .43){
-
-    const p =
-      (progress-.20)/.23;
+  let x = 50;
+  let scale = 1;
 
 
-    sareeObject.style.transform =
-      `
-      translate(-50%,-50%)
-      translate3d(
-        ${lerp(0,-32,p)}vw,
-        ${lerp(0,4,p)}vh,
-        0
-      )
-      scale(${lerp(.95,.68,p)})
-      `;
+  /*
+    CENTER → LEFT
+  */
+
+  if(p >= .12 && p < .42){
+
+    const t =
+      (p-.12)/.30;
+
+    const smooth =
+      t*t*(3-2*t);
+
+    x =
+      50 - smooth*28;
+
+    scale =
+      1 - smooth*.08;
+
+  }
 
 
-    sareeSpin.style.transform =
-      `
-      rotateY(${lerp(8,35,p)}deg)
-      `;
+  /*
+    LEFT HOLD
+  */
+
+  if(p >= .42 && p < .66){
+
+    x = 22;
+    scale = .92;
+
+  }
 
 
-    heroText.style.opacity=0;
+  /*
+    LEFT → CENTER
+  */
 
-    heroLabel.style.opacity=0;
+  if(p >= .66 && p < .84){
+
+    const t =
+      (p-.66)/.18;
+
+    const smooth =
+      t*t*(3-2*t);
+
+    x =
+      22 + smooth*28;
+
+    scale =
+      .92 + smooth*.08;
+
+  }
 
 
-    details.style.opacity =
-      Math.max(0,(p-.15)/.85);
+  /*
+    FINAL CENTER
+  */
+
+  if(p >= .84){
+
+    x = 50;
+    scale = 1;
+
+  }
+
+
+  modelArea.style.left =
+    x + "%";
+
+
+  modelArea.style.transform =
+    `translate(-50%,-50%) scale(${scale})`;
+
+
+  /* --------------------------------
+     3D ROTATION
+  -------------------------------- */
+
+  /*
+    Rotation never stops.
+
+    Even when the user stops scrolling,
+    the model continues rotating.
+  */
+
+  const time =
+    performance.now()/1000;
+
+  const baseRotation =
+    p*260;
+
+  const continuousRotation =
+    time*9;
+
+  const tilt =
+    Math.sin(time*.7)*1.5;
+
+  modelRotate.style.transform =
+    `
+      rotateY(${baseRotation+continuousRotation}deg)
+      rotateX(${tilt}deg)
+    `;
+
+
+  /* --------------------------------
+     PRODUCT DETAILS
+  -------------------------------- */
+
+  if(p < .20){
+
+    details.style.opacity = 0;
 
     details.style.transform =
-      `
-      translateX(
-        ${lerp(80,0,p)}px
-      )
-      `;
+      "translateY(-50%) translateX(100px)";
 
   }
 
+  else if(p < .43){
 
-  /* ======================================
-     PHASE 3
-     LEFT + DETAILS
-  ====================================== */
-
-  else if(progress < .70){
-
-    sareeObject.style.transform =
-      `
-      translate(-50%,-50%)
-      translate3d(
-        -32vw,
-        4vh,
-        0
-      )
-      scale(.68)
-      `;
-
-
-    /*
-      Continuous rotation
-      starts here.
-    */
-
-    const rotation =
-      (smoothScroll * .30) % 360;
-
-    sareeSpin.style.transform =
-      `
-      rotateY(${rotation}deg)
-      `;
-
-
-    details.style.opacity=1;
-
-    details.style.transform =
-      "translateX(0)";
-
-    heroText.style.opacity=0;
-
-    heroLabel.style.opacity=0;
-
-  }
-
-
-  /* ======================================
-     PHASE 4
-     SAME IMAGE → CENTER
-  ====================================== */
-
-  else if(progress < .87){
-
-    const p =
-      (progress-.70)/.17;
-
-
-    sareeObject.style.transform =
-      `
-      translate(-50%,-50%)
-      translate3d(
-        ${lerp(-32,0,p)}vw,
-        ${lerp(4,7,p)}vh,
-        0
-      )
-      scale(${lerp(.68,.42,p)})
-      `;
-
-
-    const rotation =
-      (smoothScroll * .30) % 360;
-
-    sareeSpin.style.transform =
-      `
-      rotateY(${rotation}deg)
-      `;
-
+    const t =
+      (p-.20)/.23;
 
     details.style.opacity =
-      1-p;
+      Math.min(1,t*1.4);
 
+    details.style.transform =
+      `translateY(-50%) translateX(${100-100*t}px)`;
+
+  }
+
+  else{
+
+    details.style.opacity = 1;
+
+    details.style.transform =
+      "translateY(-50%) translateX(0)";
+
+  }
+
+
+  /* --------------------------------
+     CENTER CARD
+  -------------------------------- */
+
+  if(p < .70){
+
+    centerCard.style.opacity = 0;
+
+    centerCard.style.transform =
+      "translate(-50%,-35%) scale(.75)";
+
+  }
+
+  else if(p < .86){
+
+    const t =
+      (p-.70)/.16;
+
+    const smooth =
+      t*t*(3-2*t);
 
     centerCard.style.opacity =
-      p;
-
+      smooth;
 
     centerCard.style.transform =
       `
       translate(
         -50%,
-        ${lerp(120,0,p)}px
+        ${-35 + smooth*15}%
+      )
+      scale(
+        ${.75 + smooth*.25}
       )
       `;
 
   }
-
-
-  /* ======================================
-     PHASE 5
-     CENTER CARD
-  ====================================== */
 
   else{
 
-    sareeObject.style.transform =
-      `
-      translate(-50%,-50%)
-      translate3d(
-        0,
-        7vh,
-        0
-      )
-      scale(.42)
-      `;
-
-
-    const rotation =
-      (smoothScroll * .30) % 360;
-
-    sareeSpin.style.transform =
-      `
-      rotateY(${rotation}deg)
-      `;
-
-
-    details.style.opacity=0;
-
-    centerCard.style.opacity=1;
-
-    centerCard.style.transform =
-      "translate(-50%,0)";
-
-    centerCard.classList.add(
-      "floating"
-    );
-
-
     /*
-      COLLECTION COMES UP
-      WITHOUT HUGE BLANK SPACE
+      Floating effect
     */
 
-    const p =
-      (progress-.87)/.13;
+    const float =
+      Math.sin(
+        performance.now()/900
+      )*5;
 
-    collection.style.bottom =
-      `${lerp(-100,0,p)}vh`;
+    centerCard.style.opacity = 1;
+
+    centerCard.style.transform =
+      `
+      translate(
+        -50%,
+        calc(-20% + ${float}px)
+      )
+      scale(1)
+      `;
+
   }
 
 
-  requestAnimationFrame(
-    animate
-  );
+  /* --------------------------------
+     COLLECTION
+  -------------------------------- */
+
+  if(p < .78){
+
+    collection.style.opacity = 0;
+
+    collection.style.bottom =
+      "-80vh";
+
+  }
+
+  else{
+
+    const t =
+      Math.min(
+        1,
+        (p-.78)/.22
+      );
+
+    const smooth =
+      t*t*(3-2*t);
+
+    collection.style.opacity =
+      smooth;
+
+    collection.style.bottom =
+      `${-78 + smooth*72}vh`;
+
+  }
+
 }
+
+
+/* =========================
+   BAG
+========================= */
+
+let bagCount = 0;
+
+function addBag(){
+
+  bagCount++;
+
+  document.getElementById(
+    "bagCount"
+  ).textContent =
+    bagCount;
+
+  showToast(
+    "Added to your collection"
+  );
+
+}
+
+
+/* =========================
+   TOAST
+========================= */
+
+function showToast(message){
+
+  const toast =
+    document.createElement("div");
+
+  toast.textContent =
+    message;
+
+  toast.style.position =
+    "fixed";
+
+  toast.style.left =
+    "50%";
+
+  toast.style.bottom =
+    "30px";
+
+  toast.style.transform =
+    "translateX(-50%)";
+
+  toast.style.padding =
+    "13px 22px";
+
+  toast.style.borderRadius =
+    "30px";
+
+  toast.style.background =
+    "#241d15";
+
+  toast.style.color =
+    "#fff";
+
+  toast.style.fontSize =
+    "11px";
+
+  toast.style.letterSpacing =
+    "1px";
+
+  toast.style.zIndex =
+    "9999";
+
+  toast.style.boxShadow =
+    "0 15px 40px rgba(0,0,0,.2)";
+
+  document.body.appendChild(
+    toast
+  );
+
+  setTimeout(
+    ()=>{
+      toast.remove();
+    },
+    1800
+  );
+
+}
+
+
+/* =========================
+   START
+========================= */
 
 animate();
 
